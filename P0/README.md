@@ -10,3 +10,7 @@
   Un tercer commit
   
 ![](Ejercicio2-img1.gif)
+
+# Clonando en mi ordenador personal
+prueba para comprobar que funciona
+aqui tambien...
