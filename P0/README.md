@@ -9,3 +9,4 @@
   # Otro cambio...
   Un tercer commit
   
+![](Ejercicio2-img1.gif)
