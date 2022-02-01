@@ -1,16 +1,25 @@
  # Práctica 0
  
- Esta es mi primera modificacion
- Estoy probando el VSCode
+Hola ke ase
+esto es una prueba
 
- # Probando...
-  Un segundo commit
+Esto ya si que sale en otra
+linea
 
-  # Otro cambio...
-  Un tercer commit
-  
+est es una linea  
+esto es otra linea  
+otra mas  
+
+Estas palabras **está en negrita**..
+
+esta frase *está en cursiva*
+
+## Lista no ordenada
+ * Primer item
+ * Segundo item
+ * Tercer item
+
 ![](Ejercicio2-img1.gif)
 
-# Clonando en mi ordenador personal
-prueba para comprobar que funciona
-aqui tambien...
+![](Ejercicio2-img2.jpg)
+
