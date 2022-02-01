@@ -1,5 +1,5 @@
- # Práctica 0
- 
+# Práctica 0
+
 Hola ke ase
 esto es una prueba
 
@@ -15,11 +15,11 @@ Estas palabras **está en negrita**..
 esta frase *está en cursiva*
 
 ## Lista no ordenada
- * Primer item
- * Segundo item
- * Tercer item
+
+* Primer item
+* Segundo item
+* Tercer item
 
 ![](Ejercicio2-img1.gif)
 
 ![](Ejercicio2-img2.jpg)
-
