@@ -1,0 +1,11 @@
+body{
+    background-color: aqua;
+    background-image: url(img/titulo.jpg);
+}
+
+#cabecera{
+    display:block;
+    margin:auto;
+    width: 100%;
+    height: 350px;
+}
