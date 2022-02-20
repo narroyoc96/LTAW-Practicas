@@ -2,70 +2,80 @@
 //Noelia Arroyo Castaño
 //Asigantura: LTAW
 
-//Importando módulos
-const url = require('url');
+//-- Importamos los módulos
 const http = require('http');
+const url = require('url');
 const fs = require('fs');
 
-//Definición del puerto
-const PUERTO = 9000;
+//-- Puerto que vamos a utilizar
+const PUERTO = 9000
 
-//Creación del servidor
-const server = http.createServer((req, res) => {
+//-- Mensaje 
+console.log("Arrancando servidor...");
 
-    console.log("Petición recibida")
+//-- Creamos servidor
+const server = http.createServer((req,res) => {
+    //-- Mensaje petición recibida
+    console.log("Petición recibida");
+    
+    let myURL = url.parse(req.url, true);
 
-    //Construir el objeto url con la url de la solicitud
-    const url = new URL(req.url, 'http://' + req.headers['host']);
-    console.log(url.pathname);
+  //-- Escribir en consola la ruta de nuestro recurso
+  console.log("Recurso recibido: " + myURL.pathname);
 
-    //Inicializamos la variable recurso
-    var resource = ""; 
+  //-- Definir la variable fichero
+  let filename = "";
 
-    //Analizamos el recurso
-    if (url.pathname == '/') {
-      resource += "/tienda.html"; //Si pide la página principal
-    } else {
-      resource += url.pathname; //Si pide otro recurso
-    }
+  //-- Obtener la ruta (pathname)
+  //-- Comprobar si la ruta es elemento raiz
+  //-- Obtener fichero a devolver
+  if (myURL.pathname == "/"){
+    filename += "tienda.html";  //-- Abrir la pagina principal
+  }else{
+    filename += myURL.pathname.substr(1);  //-- Abrir el fichero solicitado
+  }
+//-- Extraer el tipo de mime que es la ruta
+  //-- y quedarse con la extenson
+  let ext = filename.split(".")[1];
 
-    //Obtención del tipo de recurso solicitado
-    resource_type = resource.split(".")[1];
-    resource = "." + resource;
+  //Escribir tipo de mime solicitado
+  console.log('Tipo de dato pedido: ' + ext);
 
-    console.log("Recurso: " + resource);
-    console.log("Extensión: " + resource_type);
 
-    //Lectura asíncrona
-    fs.readFile(resource, function(err, data){
+  //Definir los tipos de mime
+  const mimeType = {
+    "html" : "text/html",
+    "css"  : "text/css",
+    "jpg"  : "image/jpg",
+    "JPG"  : "image/jpg",
+    "jpeg" : "image/jpeg",
+    "png"  : "image/png",
+    "gif"  : "image/gif",
+    "ico"  : "image/x-icon"
+  };
 
-      //Definición tipo archivo html.
-      var mime = "text/html"
+  //Asignar tipo de mime leer
+  let mime = mimeType[ext];
+  console.log("Tipo de mime solicitado: " + mime);
 
-      //Definición tipo archivo imágenes
-      if(resource_type == 'jpg' || resource_type == 'png'){
-          mime = "image/" + resource_type;
-      }
+  fs.readFile(filename, function(err, data){
+    
+    //Devolver pagina de error personalizada, 404 NOT FOUND
+    if ((err) || (filename == 'error.html')){
+      res.writeHead(404, {'Content-Type': mime});
+      console.log("Not found");
+    }else{
 
-      //Definición tipo archivo css
-      if (resource_type == "css"){
-          mime = "text/css";
-      }
-
-      //Fichero no encontrado
-      if (err){
-
-          //Lanzar error
-          res.writeHead(404,{'Content-Type': mime})
-          res.write(data);
-          res.end();
-      }else{
-          res.writeHead(200, {'Content-Type': mime});
-          res.write(data);
-          res.end();
-      }
-    });
+      //Mandar mensaje 200 OK
+      res.writeHead(200, {'Content-Type': mime});
+      console.log("Peticion Atendida, 200 OK");
+    } 
+    //Enviar datos fichero solicitado  
+    res.write(data);
+    res.end();
+  });
 });
 
+//Activar el servidor
 server.listen(PUERTO);
-console.log("Servidor de la tienda online escuchando en puerto: " + PUERTO)
+console.log("Tienda de Moda Online. Escuchando en puerto: " + PUERTO);
