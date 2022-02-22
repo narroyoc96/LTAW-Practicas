@@ -11,58 +11,64 @@ const fs = require('fs');
 const PUERTO = 9000;
 
 //Creación del servidor
-const server = http.createServer((req, res) => {
+const server = http.createServer(function(req, res) {
 
-    console.log("Petición recibida")
+  console.log("Petición recibida");
 
-    //Construir objeto url con la url de la solicitud
-    const url = new URL(req.url, 'http://' + req.headers['host']);
-    console.log(url.pathname);
+  //Construir objeto url con la url de la solicitud
+  let url = new URL(req.url, 'http://' + req.headers['host']);
+  console.log("Esta es la URL solicitada:" + url.href);
 
-    //Se inicializa la variable recurso
-    var resource = ""; 
-    
-    //Analizar el recurso solicitado
-    if (url.pathname == '/') {
-      resource += "/tienda.html"; //Si pide la página principal
-    } else {
-      resource += url.pathname; //Si pide otro recurso
-    }
+  //Se inicializa la variable recurso
+  let resource = ""; 
+  
+  //Analizar el recurso solicitado
+  if (url.pathname == '/') {
+    resource += "/tienda.html"; //Si pide la página principal
+  } else if(url.pathname == "/favicon.icon"){
+    file = 'imagenes/ico.ico'
+  } else {
+    resource += url.pathname; //Si pide otro recurso
+  }
 
-    //Obtención tipo recurso solicitado
-    resource_type = resource.split(".")[1];
-    resource = "." + resource;
+  //Obtención tipo recurso solicitado
+  resource_type = resource.split(".")[1]; //la extension
+  resource = "." + resource;
 
-    console.log("Recurso: " + resource);
-    console.log("Extensión: " + resource_type);
+  console.log("Recurso: " + resource);
+  console.log("Extensión: " + resource_type);
 
-  //Lectura asíncrona
-  fs.readFile(resource, function(err, data){
 
-    //Definición tipo archivo html.
-    var mime = "text/html"
+  //Definicion de todos los tipos de archivo
+  const mime = {
+    "html" : "text/html",
+    "jpeg" : "image/jpeg",
+    "jpg" : "image/jpg",
+    "png" : "image/png",
+    "ico" : "image/ico",
+    "css" : "text/css",
+  };
+  //Extrae tipo mime
+  let mime_type = mime[resource_type];
+  console.log("Tipo de mime asociado es:" + mime_type);
 
-    //Definición del tipo de imágenes
-    if(resource_type == 'jpg' || resource_type == 'png' || resource_type == 'jpeg'){
-        mime = "image/" + resource_type;
-    }
-
-    //Definición del tipo de archivo css
-    if (resource_type == "css"){
-        mime = "text/css";
-    }
-
+  //Lectura sincrona
+  fs.readFile(resource, function(err,data) {
     //Fichero no encontrado
     if (err){
-        //Lanza error
-        res.writeHead(404,{'Content-Type': mime})
-        res.write(data);
-        res.end();
+      //Lanza error
+      res.writeHead(404,{'Content-Type': 'text/html'})
+      console.log("Petición rechazada: 404 Not Found");
+      resource = "html/error.html";
+      data = fs.readFileSync(resource);
+      res.write(data);
+      res.end();
     }else{
-        res.writeHead(200, {'Content-Type': mime});
-        res.write(data);
-        res.end();
-    }
+      res.writeHead(200, {'Content-Type': mime});
+      console.log("Peticion Recibida, 200 OK");
+      res.write(data);
+      res.end();
+    }     
   });
 });
 
