@@ -26,7 +26,7 @@ const server = http.createServer(function(req, res) {
   if (url.pathname == '/') {
     resource += "/tienda.html"; //Si pide la página principal
   } else if(url.pathname == "/favicon.icon"){
-    file = 'imagenes/ico.ico'
+    file = 'ico.ico'
   } else {
     resource += url.pathname; //Si pide otro recurso
   }
