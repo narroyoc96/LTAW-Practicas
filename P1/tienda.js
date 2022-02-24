@@ -8,7 +8,7 @@ const http = require('http');
 const fs = require('fs');
 
 //Definición del puerto
-const PUERTO = 9000;
+const PUERTO = 9090;
 
 //Creación del servidor
 const server = http.createServer(function(req, res) {
