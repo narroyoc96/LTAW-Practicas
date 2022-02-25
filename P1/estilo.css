@@ -1,5 +1,5 @@
 body{
-    background-image: url(imagen/fondo/fondo.jpg);
+    background-image: url(imagen/fondo/prueba.jpg);
     background-size: cover;
 }
 
@@ -38,7 +38,7 @@ h2{
     background-color:transparent;
     font-size: 40px;
     font-family: 'Courier New', Courier, monospace;
-    color: rgb(10, 7, 9);
+    color: rgb(255, 0, 170);
 }
 
 h3{
@@ -106,5 +106,5 @@ button:hover{
 }
 
 .red:hover{
-    background-color: rgb(229, 255, 116);
+    background-color: rgb(255, 183, 231);
 }

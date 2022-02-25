@@ -1,6 +1,6 @@
 
 body{
-    background-image: url(imagen/fondo/fondo.jpg);
+    background-image: url(imagen/fondo/prueba.jpg);
     background-size: cover;
 }
 
@@ -120,5 +120,6 @@ button:hover{
 }
 
 .red:hover{
-    background-color: rgb(229, 255, 116);
+    background-color: rgb(255, 183, 231);
+
 }
