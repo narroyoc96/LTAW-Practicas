@@ -1,0 +1,33 @@
+body{
+    background-image: url(imagen/fondo.jpg);
+    background-size: cover;
+}
+
+#cabecera{
+    margin-left: 630px;
+    margin-top: 35px;
+    width: 100px;
+    height: 100px;
+}
+
+#inicio{
+    text-align:center;
+    background-color:transparent;
+    font-size: 15px;
+    font-family: monospace;
+    margin-top: 60px;
+}
+
+#yo{
+    width: 125px;
+    margin-left: 630px;
+    margin-top: 35px;
+}
+
+#nosotros{
+    text-align:center;
+    background-color:transparent;
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+}
