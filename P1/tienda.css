@@ -25,21 +25,29 @@ h1{
 
 .articulos1{
     margin-top: 100px;
-    margin-left: 600px; 
-}
+    margin-left: 600px;
+    
 
+}
 
 #camiseta{
     width: 125px;
     height: 125px;
-    
+    border-color: black;
+    border-radius: 21px;
+    border-style: solid;
 }
+    
 
 #pantalon{
     width: 125px;
     height: 125px;
     margin-left: 80px;
+    border-color: black;
+    border-radius: 21px;
+    border-style: solid;
 }
+
 
 .articulos2{
     margin-top: 75px;
@@ -50,6 +58,9 @@ h1{
 #vestido{
     width: 125px;
     height: 125px;
+    border-color: black;
+    border-radius: 21px;
+    border-style: solid;
     
 }
 
@@ -57,6 +68,9 @@ h1{
     width: 125px;
     height: 125px;
     margin-left: 80px;
+    border-color: black;
+    border-radius: 21px;
+    border-style: solid;
 }
 
 #inicio{
@@ -76,7 +90,7 @@ button{
     text-align: center;
     margin: 5px; /*margen entre botones*/
     padding: 0;
-    color:black;
+    color:rgb(41, 40, 40);
     font-weight: bold;
     font-size: 1em; /*tamaño letra dentro de botones*/
     border: none;
@@ -88,5 +102,6 @@ button{
 }
 
 button:hover{
-    background-color: pink;
+    background-color: rgb(204, 79, 175);
+    color: whitesmoke;
 }

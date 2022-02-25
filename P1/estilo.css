@@ -76,7 +76,7 @@ button{
     text-align: center;
     margin: 5px; /*margen entre botones*/
     padding: 0;
-    color:black;
+    color:rgb(41, 40, 40);
     font-weight: bold;
     font-size: 1em; /*tamaño letra dentro de botones*/
     border: none;
@@ -88,5 +88,6 @@ button{
 }
 
 button:hover{
-    background-color: pink;
+    background-color: rgb(204, 79, 175);
+    color: whitesmoke;
 }
