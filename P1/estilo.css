@@ -71,3 +71,23 @@ p{
     margin-left: 630px;
     margin-top: 35px;
 }
+
+button{
+    cursor: pointer;
+    text-align: center;
+    margin: 5px; /*margen entre botones*/
+    padding: 0;
+    color:black;
+    font-weight: bold;
+    font-size: 1em; /*tamaño letra dentro de botones*/
+    border: none;
+    border-color: transparent;
+    border-style: ridge;
+    border-radius: 10px;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+button:hover{
+    background-color: pink;
+}
