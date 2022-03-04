@@ -4,10 +4,13 @@ body{
 }
 
 #cabecera{
-    margin-left: 630px;
     margin-top: 35px;
-    width: 100px;
+    /*centrar imagen centro*/
     height: 100px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1{
