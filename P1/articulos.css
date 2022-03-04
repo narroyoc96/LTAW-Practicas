@@ -72,18 +72,21 @@ h2{
 }
 
 h3{
-    text-align:center;
-    background-color:transparent;
+    text-align: center;
+    background-color: transparent;
     font-size: 15px;
     font-family: 'Courier New', Courier, monospace;
     color: black;
 }
 
 .art{
-    margin-left: 630px;
     margin-top: 35px;
-    width: 250px;
-
+    /*centrar imagen centro*/
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .cesta{
