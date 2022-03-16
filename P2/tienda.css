@@ -1,0 +1,134 @@
+
+body{
+    background-image: url(imagen/fondo/prueba.jpg);
+    background-size: cover;
+}
+
+#cabecera{
+    margin-top: 35px;
+    /*centrar imagen centro*/
+    height: 100px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    text-align: center; 
+    font-weight: bold;
+    margin-top: 40px;
+    font-size: 30px;
+    font: small-caps 100%/200% serif;
+    font-size: 30px;
+    /*font-family: "Curier New";*/
+    font-style: italic;
+    color: black;
+}
+
+.articulos1{
+    margin-top: 100px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#camiseta{
+    width: 125px;
+    height: 125px;
+    border-color: black;
+    border-radius: 21px;
+    border-style: solid;
+}
+    
+
+#pantalon{
+    width: 125px;
+    height: 125px;
+    margin-left: 80px;
+    border-color: black;
+    border-radius: 21px;
+    border-style: solid;
+}
+
+
+.articulos2{
+    margin-top: 75px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#vestido{
+    width: 125px;
+    height: 125px;
+    border-color: black;
+    border-radius: 21px;
+    border-style: solid;
+    
+}
+
+#bolso{
+    width: 125px;
+    height: 125px;
+    margin-left: 80px;
+    border-color: black;
+    border-radius: 21px;
+    border-style: solid;
+}
+
+#inicio{
+    text-align:center;
+    background-color:transparent;
+    font-family: garamont;
+
+}
+
+.redessociales{
+    margin-top: 35px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    cursor: pointer;
+    text-align: center;
+    margin: 5px; /*margen entre botones*/
+    padding: 0;
+    color:rgb(41, 40, 40);
+    font-weight: bold;
+    font-size: 1em; /*tamaño letra dentro de botones*/
+    border: none;
+    border-color: transparent;
+    border-style: ridge;
+    border-radius: 10px;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+button:hover{
+    background-color: rgb(204, 79, 175);
+    color: whitesmoke;
+}
+
+.red{
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
+    font-weight: bold;
+    border: none;
+    border-color: transparent;
+    border-style: ridge;
+    border-radius: 10px;
+    background-color: transparent;
+
+}
+
+.red:hover{
+    background-color: rgb(255, 183, 231);
+
+}
