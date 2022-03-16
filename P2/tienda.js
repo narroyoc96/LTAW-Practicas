@@ -1,4 +1,4 @@
-//Práctica 1: Tienda de ropa
+//Práctica 2: Tienda de ropa mejorada
 //Noelia Arroyo Castaño
 //Asigantura: LTAW
 
@@ -10,6 +10,21 @@ const fs = require('fs');
 //Definición del puerto
 const PUERTO = 9090;
 
+//Productos
+const CAMISETA = fs.readFileSync('camiseta.html', 'utf-8');
+const PANTALON = fs.readFileSync('pantalon.html', 'utf-8');
+const VESTIDO = fs.readFileSync('vestido.html', 'utf-8');
+const BOLSO = fs.readFileSync('bolso.html', 'utf-8');
+
+//Página error
+const ERROR = fs.readFileSync('error.html', 'utf-8');
+
+//Formularios login
+const LOGIN = fs.readFileSync('login.html', 'utf-8');
+const LOGIN_WELL = fs.readFileSync('login-well.html', 'utf-8');
+const LOGIN_BAD = fs.readFileSync('login-bad.html', 'utf-8');
+const LOGIN_USER = fs.readFileSync('loguin-user.html', 'utf-8');
+
 //Creación del servidor
 const server = http.createServer(function(req, res) {
 
@@ -20,7 +35,7 @@ const server = http.createServer(function(req, res) {
   console.log("Esta es la URL solicitada:" + url.href);
 
   //Se inicializa la variable recurso
-  let resource = ""; 
+  let resource = "";
   
   //Analizar el recurso solicitado
   if (url.pathname == '/') {
@@ -49,6 +64,7 @@ const server = http.createServer(function(req, res) {
     "ico" : "image/ico",
     "css" : "text/css",
   };
+
   //Extrae tipo mime
   let mime_type = mime[resource_type];
   console.log("Tipo de mime asociado es:" + mime_type);
@@ -74,4 +90,4 @@ const server = http.createServer(function(req, res) {
 });
 
 server.listen(PUERTO);
-console.log("Servidor de la tienda online escuchando en puerto: " + PUERTO) 
+console.log("Servidor de la tienda online escuchando en puerto: " + PUERTO);
