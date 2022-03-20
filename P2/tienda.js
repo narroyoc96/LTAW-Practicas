@@ -1,4 +1,4 @@
-//Práctica 1: Tienda de ropa
+//Práctica 2: Tienda de ropa mejorada
 //Noelia Arroyo Castaño
 //Asigantura: LTAW
 
@@ -10,6 +10,29 @@ const fs = require('fs');
 //Definición del puerto
 const PUERTO = 9090;
 
+//Definición tipos mime 
+const mime = {
+  "html" : "text/html",
+  "css"  : "text/css",
+  "js"   : "application/javascript",
+  "jpg"  : "image/jpg",
+  "png"  : "image/png",
+  "PNG"  : "image/png",
+  "gif"  : "image/gif",
+  "json" : "application/json"
+};
+
+//Páginas productos
+const CAMISETA = fs.readFileSync('camiseta.html', 'utf-8');
+const PANTALON = fs.readFileSync('pantalon.html', 'utf-8');
+const VESTIDO = fs.readFileSync('vestido.html', 'utf-8');
+const BOLSO = fs.readFileSync('bolso.html', 'utf-8');
+
+//Páginas error y formularios
+const ERROR = fs.readFileSync('error.html', 'utf-8');
+const LOGIN = fs.readFileSync('form-user.html', 'utf-8');
+const LOGIN_OK = fs.readFileSync('form-respuest.html', 'utf-8');
+const LOGIN_NOK = fs.readFileSync('form-error-respuest.html', 'utf-8');
 //Creación del servidor
 const server = http.createServer(function(req, res) {
 
@@ -49,6 +72,7 @@ const server = http.createServer(function(req, res) {
     "ico" : "image/ico",
     "css" : "text/css",
   };
+  
   //Extrae tipo mime
   let mime_type = mime[resource_type];
   console.log("Tipo de mime asociado es:" + mime_type);
