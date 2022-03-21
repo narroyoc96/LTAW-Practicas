@@ -128,8 +128,31 @@
                     "unidades": 1
                 }
             ]
-        }
+        },
+        {
+            "usuario": "noe96",
+            "tarjeta": "1471",
+            "direccion": "Calle España, 21",
+            "productos": [
+                {
+                    "producto": "Pantalon",
+                    "unidades": 1
+                },
+                {
+                    "producto": "Vestido",
+                    "unidades": 2
+                },
+                {
+                    "producto": "Bolso",
+                    "unidades": 3
+                },
+                {
+                    "producto": "Camiseta",
+                    "unidades": 2
+                }
+            ]
 
-        ]
-    }
+        }
+    ]
+}
 ]
