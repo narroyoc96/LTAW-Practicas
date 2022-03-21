@@ -39,7 +39,7 @@ const RESPUESTACOMP = fs.readFileSync('pedido-realizado.html', 'utf-8');
 const CARRO = fs.readFileSync('carrito.html', 'utf-8');
 
 //JSON estructura de la tienda
-const FICHERO_JSON = ("tienda.json");
+const FICHERO_JSON = "tienda.json";
 
 //Fichero JSON modificado
 const FICHERO_JSON_OUT = "tienda-modificada.json";
@@ -51,16 +51,20 @@ const tienda = JSON.parse(tienda_json);
 //Definición página principal
 let principal;
 
+//Definición busqueda
+let busqueda;
+
 //Definición contenido solicitado por el usuario
 let requested_content;
 
 //Arrays
-let  nombre_reg = [];
+let nombre_reg = [];
 let password_reg = [];
 
 
 //Lista de usuarios registrados
 let usuarios_reg = tienda[1]["usuarios"];
+
 for (i = 0; i < usuarios_reg.length; i++){
   nombre_reg.push(usuarios_reg[i]["usuario"]);
   password_reg.push(usuarios_reg[i]["password"]);
@@ -108,7 +112,6 @@ const mime_type = {
   "gif"  : "image/gif",
   "ico"  : "image/x-icon",
   "json" : "application/json",
-  "ttf"  : "font/ttf"
 };
 
 //Creación del servidor
@@ -157,9 +160,9 @@ const server = http.createServer((req, res) => {
   console.log("Parametros: " + url.searchParams); 
   //Leer parámetros
   let nombre = url.searchParams.get('nombre');
-  let password = myURL.searchParams.get('password');
-  let direccion = myURL.searchParams.get('direccion');
-  let tarjeta = myURL.searchParams.get('tarjeta');
+  let password = url.searchParams.get('password');
+  let direccion = url.searchParams.get('direccion');
+  let tarjeta = url.searchParams.get('tarjeta');
   console.log(" Nombre usuario: " + nombre);
   console.log(" Password: " + password);
   console.log(" Direccion de envio: " + direccion);
@@ -312,6 +315,73 @@ const server = http.createServer((req, res) => {
     content = CARRO.replace('NINGUNO', total );
     content = content.replace('VOLVER', "<a class='button' href='/" + producto_path + "'>Volver atras</a>");
 
+  } else if(url.pathname =='/productos'){
+    console.log("Peticion de Productos!")
+    content_type = mime_type["json"];
+
+    //Leer los parámetros
+    let parametro = urlsL.searchParams.get('parametro');
+
+    //Convertir vlores alphanumericos en string
+    parametro = parametro.toUpperCase();
+
+    console.log("  Param: " +  parametro);
+ 
+    //Array de resultado de busquedas (neuvo)
+    let result = [];
+    for (let prod of productos_json) {
+        //-- Pasar a mayúsculas
+        prodU = prod.toUpperCase();
+
+        if (prodU.startsWith(parametro)) {
+            result.push(prod);
+        }
+    }
+    //-- Imprimimos el aray de resultado de busquedas
+    console.log(result);
+    busqueda = result;
+    //-- Pasamos el resultado a formato JSON con stringify
+    request_content = JSON.stringify(result);
+
+  }else if(url.pathname == '/buscar'){
+    camiseta= ['camiseta1', 'camiseta2', 'camiseta3'];
+    pantalon = ['pantalon1', 'pantalon2', 'pantalon3'];
+    vestido = ['vestido1', 'vestido2', 'vestido3'];
+    bolso = ['bolso1', 'bolso2', 'bolso3'];
+    console.log(camiseta.includes(busqueda[0]))
+    //-- Comprobamos que producto ha seleccionado y lo redirigimos
+    if(camiseta.includes(busqueda[0])){
+      request_content = CAMISETA;
+      //-- Obtengo las descripciones y precios de cada producto
+      for (i=0; i<3; i++){
+        request_content = request_content.replace('DESCRIPCION' + (i+1), descripcion["camiseta"][i])
+        request_content = request_content.replace('PRECIO' + (i+1), precio["camiseta"][i])
+      }
+    }else if(pantalon.includes(busqueda[0])){
+      request_content = PANTALON;
+      //-- Obtengo las descripciones y precios de cada producto
+      for (i=0; i<3; i++){
+        request_content = request_content.replace('DESCRIPCION' + (i+1), descripcion["pantalon"][i])
+        request_content = request_content.replace('PRECIO' + (i+1), precio["pantalon"][i])
+      }
+    }else if(vestido.includes(busqueda[0])){
+      request_content = VESTIDO;
+      //-- Obtengo las descripciones y precios de cada producto
+      for (i=0; i<3; i++){
+        request_content = request_content.replace('DESCRIPCION' + (i+1), descripcion["vestido"][i])
+        request_content = request_content.replace('PRECIO' + (i+1), precio["vestido"][i])
+      }
+    }else if(bolso.includes(busqueda[0])){
+      request_content = BOLSO;
+      //-- Obtengo las descripciones y precios de cada producto
+      for (i=0; i<3; i++){
+        request_content = request_content.replace('DESCRIPCION' + (i+1), descripcion["bolso"][i])
+        request_content = request_content.replace('PRECIO' + (i+1), precio["bolso"][i])
+      }
+
+    }else{
+      request_content = principal;
+    }
 
   } else {
     path = url.pathname.split('/');
@@ -329,7 +399,7 @@ const server = http.createServer((req, res) => {
           filename = path[2] + '/' + file
        }
     }else{
-      filename = myURL.pathname.split('/')[1];
+      filename = url.pathname.split('/')[1];
       ext = filename.split('.')[1]
     }
 
@@ -351,7 +421,7 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  //¡respuesta
+  //respuesta
   res.setHeader('Content-Type', content_type);
   res.write(requested_content);
   res.end();
