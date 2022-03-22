@@ -9,14 +9,14 @@
         <title>Boutique Vintage</title>
         <link rel="stylesheet" href="tienda.css">
         <link rel="icon" href="imagen/boutique.ico">
+        <script src="cliente.js" defer></script>
     </head>
 
     <body>
 
-        <div id="cabecera">
-            <a href="tienda.html"><img src="imagen/tienda.PNG"></a>
-        </div>
-        <h1>TU TIENDA DE ROPA ONLINE PARA MUJER</h1>
+        <h1><img src="imagen/tienda.PNG"></h1>
+        <h3></h3>
+        
         <div id="inicio">
             <a href="tienda.html" target="_blanck"><button>INICIO</button></a> 
             <a href="nosotros.html" target="_blanck"><button>SOBRE NOSOTROS</button></a>
@@ -27,9 +27,12 @@
 
         <div>
             <a href="/login">Login</a>
-
+            <br>
+            <input type="text" placeholder="Search.." id="caja" autocomplete="on">
+            <a href="/buscar"><button class='button'>Buscar</button></a>
+            <p id="display1"></p>
         </div>
-        
+        <h2>TU TIENDA DE ROPA ONLINE PARA MUJER</h2>
         <div class="articulos1">
             <a href="/camiseta" target="_blanck"><img src="imagen/camiseta.png" id="camiseta"></a>
             <a href="/pantalon" target="_blanck"><img src="imagen/pantalon.png" id="pantalon"></a>
@@ -38,7 +41,7 @@
             <a href="/vestido" target="_blanck"><img src="imagen/vestido.png" id="vestido"></a>
             <a href="/bolso" target="_blanck"><img src="imagen/bolso.png" id="bolso"></a>
         </div>
-
+        
         <div class="redessociales">
             <a href="https://www.instagram.com/noeliaac96/?hl=es" target="_blanck"><button class="red"><img src="imagen/redes/instagram.png" alt="instagram" width="50px" ></button></a>
             <a href="https://www.facebook.com/noelia.arroyocastano" target="_blanck"><button class="red"><img src="imagen/redes/facebook.png" alt="facebook" width="50px" ></button></a>

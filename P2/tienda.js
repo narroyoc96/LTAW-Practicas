@@ -55,7 +55,7 @@ let principal;
 let busqueda;
 
 //Definición contenido solicitado por el usuario
-let requested_content;
+let content;
 
 //Arrays
 let nombre_reg = [];
@@ -109,8 +109,8 @@ const mime_type = {
   "JPG"  : "image/jpg",
   "jpeg" : "image/jpeg",
   "png"  : "image/png",
-  "gif"  : "image/gif",
-  "ico"  : "image/x-icon",
+  "PNG" : "image/PNG",
+  "ico"  : "image/ico",
   "json" : "application/json",
 };
 
@@ -193,14 +193,14 @@ const server = http.createServer((req, res) => {
       //Comprobar si el usuario está registrado
       if(user){
         //Añadir nombre a página principal
-        requested_content = PRINCIPAL.replace('<h3></h3>', '<h3> Usuario: ' + user + '</h3>');
-        requested_content = requested_content.replace('<b></b>',
+        content = PRINCIPAL.replace('<h3></h3>', '<h3> Usuario: ' + user + '</h3>');
+        content = content.replace('<b></b>',
                                 '<a  class= "elemen" href="/comprar">Finalizar Comprar</a>');
-        principal = requested_content;
+        principal = content;
       }else{
         //Muestra la página principal con el login
-        requested_content = PRINCIPAL; 
-        principal = requested_content;
+        content = PRINCIPAL; 
+        principal = content;
       }
 
   //Login
@@ -209,11 +209,11 @@ const server = http.createServer((req, res) => {
     if(user){
       //Si hay cookie
       console.log('Usuario ya registrado en la tienda :)');
-      requested_content = LOGIN_USER.replace("USUARIO", user );
+      content = LOGIN_USER.replace("USUARIO", user );
     }else{
     console.log('Usuario no registrado en la tienda :(');
     //Se envía formulario login
-    requested_content = LOGIN;
+    content = LOGIN;
     }
     ext = "html";
 
@@ -229,45 +229,45 @@ const server = http.createServer((req, res) => {
 
         //Login OK
         console.log('Usuario registrado');
-        requested_content = LOGIN_OK;
+        content = LOGIN_OK;
         html_extra = nombre;
-        requested_content = requested_content.replace("HTML_EXTRA", html_extra);
+        content = content.replace("HTML_EXTRA", html_extra);
 
       }else{
-        requested_content = LOGIN_NOK;
+        content = LOGIN_NOK;
       }
   }else if (url.pathname == '/comprar'){
-    requested_content = COMPRAR.replace('PRODUCTOS', productos_carrito)
+    content = COMPRAR.replace('PRODUCTOS', productos_carrito)
 
   }else if (url.pathname == '/finalizar') {
-    requested_content = RESPUESTACOMP;
+    content = RESPUESTACOMP;
 
   }else if (url.pathname == '/camiseta'){
-    requested_content = CAMISETA;
+    content = CAMISETA;
     for (i=0; i<3; i++) {
-      request_content = request_content.replace('DESCRIPCION' + (i+1), descripcion["Camiseta"][i])
-      request_content = request_content.replace('PRECIO' + (i+1), precio["Camiseta"][i])
+      content = content.replace('DESCRIPCION' + (i+1), descripcion["Camiseta"][i])
+      content = content.replace('PRECIO' + (i+1), precio["Camiseta"][i])
     }
     
   }else if (url.pathname == '/pantalon'){
-    requested_content = PANTALON;
+    content = PANTALON;
     for (i=0; i<3; i++){
-      request_content = request_content.replace('DESCRIPCION' + (i+1), descripcion["Pantalon"][i])
-      request_content = request_content.replace('PRECIO' + (i+1), precio["Pantalon"][i])
+      content = content.replace('DESCRIPCION' + (i+1), descripcion["Pantalon"][i])
+      content = content.replace('PRECIO' + (i+1), precio["Pantalon"][i])
     }
 
   }else if (url.pathname == '/vestido'){
-    requested_content = VESTIDO;
+    content = VESTIDO;
     for (i=0; i<3; i++){
-      request_content = request_content.replace('DESCRIPCION' + (i+1), descripcion["Vestido"][i])
-      request_content = request_content.replace('PRECIO' + (i+1), precio["Vestido"][i])
+      content = content.replace('DESCRIPCION' + (i+1), descripcion["Vestido"][i])
+      content = content.replace('PRECIO' + (i+1), precio["Vestido"][i])
     }
 
   }else if (url.pathname == '/bolso'){
-    requested_content = BOLSO;
+    content = BOLSO;
     for (i=0; i<3; i++){
-      request_content = request_content.replace('DESCRIPCION' + (i+1), descripcion["Bolso"][i])
-      request_content = request_content.replace('PRECIO' + (i+1), precio["Bolso"][i])
+      content = content.replace('DESCRIPCION' + (i+1), descripcion["Bolso"][i])
+      content = content.replace('PRECIO' + (i+1), precio["Bolso"][i])
     }
 
   }else if(url.pathname == '/camiseta/carrito' || url.pathname == '/pantalon/carrito' || url.pathname == '/vestido/carrito' || url.pathname == '/bolso/carrito'){
@@ -320,12 +320,12 @@ const server = http.createServer((req, res) => {
     content_type = mime_type["json"];
 
     //Leer los parámetros
-    let parametro = urlsL.searchParams.get('parametro');
+    let param = url.searchParams.get('parametro');
 
     //Convertir vlores alphanumericos en string
-    parametro = parametro.toUpperCase();
+    param = param.toUpperCase();
 
-    console.log("  Param: " +  parametro);
+    console.log("  Param: " +  param);
  
     //Array de resultado de busquedas (neuvo)
     let result = [];
@@ -333,7 +333,7 @@ const server = http.createServer((req, res) => {
         //-- Pasar a mayúsculas
         prodU = prod.toUpperCase();
 
-        if (prodU.startsWith(parametro)) {
+        if (prodU.startsWith(param)) {
             result.push(prod);
         }
     }
@@ -341,7 +341,7 @@ const server = http.createServer((req, res) => {
     console.log(result);
     busqueda = result;
     //-- Pasamos el resultado a formato JSON con stringify
-    request_content = JSON.stringify(result);
+    content = JSON.stringify(result);
 
   }else if(url.pathname == '/buscar'){
     camiseta= ['camiseta1', 'camiseta2', 'camiseta3'];
@@ -351,36 +351,36 @@ const server = http.createServer((req, res) => {
     console.log(camiseta.includes(busqueda[0]))
     //-- Comprobamos que producto ha seleccionado y lo redirigimos
     if(camiseta.includes(busqueda[0])){
-      request_content = CAMISETA;
+      content = CAMISETA;
       //-- Obtengo las descripciones y precios de cada producto
       for (i=0; i<3; i++){
-        request_content = request_content.replace('DESCRIPCION' + (i+1), descripcion["camiseta"][i])
-        request_content = request_content.replace('PRECIO' + (i+1), precio["camiseta"][i])
+        content = content.replace('DESCRIPCION' + (i+1), descripcion["camiseta"][i])
+        content = content.replace('PRECIO' + (i+1), precio["camiseta"][i])
       }
     }else if(pantalon.includes(busqueda[0])){
-      request_content = PANTALON;
+      content = PANTALON;
       //-- Obtengo las descripciones y precios de cada producto
       for (i=0; i<3; i++){
-        request_content = request_content.replace('DESCRIPCION' + (i+1), descripcion["pantalon"][i])
-        request_content = request_content.replace('PRECIO' + (i+1), precio["pantalon"][i])
+        content = content.replace('DESCRIPCION' + (i+1), descripcion["pantalon"][i])
+        content = content.replace('PRECIO' + (i+1), precio["pantalon"][i])
       }
     }else if(vestido.includes(busqueda[0])){
-      request_content = VESTIDO;
+      content = VESTIDO;
       //-- Obtengo las descripciones y precios de cada producto
       for (i=0; i<3; i++){
-        request_content = request_content.replace('DESCRIPCION' + (i+1), descripcion["vestido"][i])
-        request_content = request_content.replace('PRECIO' + (i+1), precio["vestido"][i])
+        content = content.replace('DESCRIPCION' + (i+1), descripcion["vestido"][i])
+        content = content.replace('PRECIO' + (i+1), precio["vestido"][i])
       }
     }else if(bolso.includes(busqueda[0])){
-      request_content = BOLSO;
+      content = BOLSO;
       //-- Obtengo las descripciones y precios de cada producto
       for (i=0; i<3; i++){
-        request_content = request_content.replace('DESCRIPCION' + (i+1), descripcion["bolso"][i])
-        request_content = request_content.replace('PRECIO' + (i+1), precio["bolso"][i])
+        content = content.replace('DESCRIPCION' + (i+1), descripcion["bolso"][i])
+        content = content.replace('PRECIO' + (i+1), precio["bolso"][i])
       }
 
     }else{
-      request_content = principal;
+      content = principal;
     }
 
   } else {
@@ -423,7 +423,7 @@ const server = http.createServer((req, res) => {
 
   //respuesta
   res.setHeader('Content-Type', content_type);
-  res.write(requested_content);
+  res.write(content);
   res.end();
 
 });
