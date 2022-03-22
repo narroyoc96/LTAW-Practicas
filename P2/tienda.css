@@ -1,7 +1,8 @@
 
 body{
-    background-image: url(imagen/fondo/prueba.jpg);
+    /*background-image: url(imagen/fondo/prueba.jpg);*/
     background-size: cover;
+    background-color: aqua;
 }
 
 #cabecera{
