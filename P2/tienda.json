@@ -1,93 +1,18 @@
 [
     {
-        "productos":[
+        "productos": [
             {
-                "Camiseta":[
-                    {
-                        "nombre": "camiseta1",
-                        "descripcion": "Camiseta gráfico texto",
-                        "precio": "7.99€",
-                        "stock": 20
-                    },
-                    {
-                        "nombre": "camiseta2",
-                        "descripcion": "Camiseta mujeres ilustradas",
-                        "precio": "12.99€",
-                        "stock": 20
-                    },
-                    {
-                        "nombre": "camiseta3",
-                        "descripcion": "Camiseta print gráfico",
-                        "precio": "9.99€",
-                        "stock": 20
-                    }
-                ]
+                "nombre": "camiseta1",
+                "descripcion": "Camiseta gráfico texto",
+                "stock": 20,
+                "precio": 7.99
+                        
             },
             {
-                "Pantalon": [
-                    {
-                        "nombre": "pantalon1",
-                        "descripcion": "Pantalón wide leg",
-                        "precio": "19.99€",
-                        "stock": 20
-                    },
-                    {
-                        "nombre": "pantalon2",
-                        "descripcion": "Pantalón culotte vestir",
-                        "precio": "29.99€",
-                        "stock": 20
-                    },
-                    {
-                        "nombre": "pantalon3",
-                        "descripcion": "Pantalón flare tul",
-                        "precio": "22.99€",
-                        "stock": 20
-                    }
-                ]
-            },
-            {
-                "Vestido": [
-                    {
-                        "nombre": "vestido1",
-                        "descripcion": "Vestido midi manga larga",
-                        "precio": "19.99€",
-                        "stock": 20
-                    },
-                    {
-                        "nombre": "vestido2",
-                        "descripcion": "America vestido",
-                        "precio": "35.99€",
-                        "stock": 20
-                    },
-                    {
-                        "nombre": "vestido3",
-                        "descripcion": "Vestido polo fruncido",
-                        "precio": "22.99€",
-                        "stock": 20
-                    }
-                ]
-            },
-            {
-                "Bolso": [
-                    {
-                        "nombre": "bolso1",
-                        "descripcion": "Bandolera piel fleco",
-                        "precio": "39.99€",
-                        "stock": 20
-                    },
-                    {
-                        "nombre": "bolso2",
-                        "descripcion": "Bandolera cierra",
-                        "precio": "12.99€",
-                        "stock": 20
-                    },
-                    {
-                        "nombre": "bolso3",
-                        "descripcion": "Shopper acolchado",
-                        "precio": "17.99€",
-                        "stock": 20
-                    }
-                ]
+                "nombre": "camiseta2",
+                "descripcion": "Camiseta mujeres ilustradas",
+                "stock": 20,
+                "precio": 12.99
             }
         ]
     },
@@ -114,14 +39,8 @@
                 "tarjeta": "1234",
                 "direccion": "Avenida España, 3",
                 "productos": [
-                    {
-                        "producto": "Camiseta",
-                        "unidades": 2 
-                    },
-                    {
-                        "producto": "Bolso",
-                        "unidades": 3
-                    }
+                    "camiseta1 x2",
+                    ""
                 ]
             },
             {
@@ -129,14 +48,8 @@
                 "tarjeta": "5678",
                 "direccion": "Calle Talavera, 5",
                 "productos": [
-                    {
-                        "producto": "Pantalon",
-                        "unidades": 8
-                    },
-                    {
-                        "producto": "Vestido",
-                        "unidades": 1
-                    }
+                    "",
+                    "camiseta2 x4"
                 ]
             }
         ]
