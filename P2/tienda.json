@@ -19,13 +19,13 @@
     {
         "usuarios": [
             {
-                "usuario": "root",
+                "user": "root",
                 "nombre": "Root root root",
                 "email": "root@github.com",
                 "password": "root"
             },
             {
-                "usuario": "narroyoc",
+                "user": "narroyoc",
                 "nombre": "Noelia Arroyo Castaño",
                 "email": "noelia@github.com",
                 "password": "1111"
@@ -35,18 +35,18 @@
     {
         "pedidos": [
             {
-                "usuario": "root",
+                "user": "root",
+                "dirección": "Avenida España, 3",
                 "tarjeta": "1234",
-                "direccion": "Avenida España, 3",
                 "productos": [
                     "camiseta1 x2",
                     ""
                 ]
             },
             {
-                "usuario": "narroyoc",
+                "user": "narroyoc",
+                "dirección": "Calle Talavera, 5",
                 "tarjeta": "5678",
-                "direccion": "Calle Talavera, 5",
                 "productos": [
                     "",
                     "camiseta2 x4"
