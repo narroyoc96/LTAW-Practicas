@@ -33,6 +33,12 @@ const LOGIN = fs.readFileSync('form-user.html', 'utf-8');
 //Páginas productos camiseta
 const ARTICULO1 = fs.readFileSync('articulo1.html', 'utf-8');
 const ARTICULO2 = fs.readFileSync('articulo2.html', 'utf-8');
+const ARTICULO3 = fs.readFileSync('articulo3.html', 'utf-8');
+const ARTICULO4 = fs.readFileSync('articulo4.html', 'utf-8');
+const ARTICULO5 = fs.readFileSync('articulo5.html', 'utf-8');
+const ARTICULO6 = fs.readFileSync('articulo6.html', 'utf-8');
+const ARTICULO7= fs.readFileSync('articulo7.html', 'utf-8');
+const ARTICULO8 = fs.readFileSync('articulo8.html', 'utf-8');
 
 //Página error
 const ERROR = fs.readFileSync('error.html', 'utf-8');
@@ -92,8 +98,7 @@ tienda[0]["productos"].forEach((element, index)=>{
 });
 console.log();
 
-//-- Analizar la cookie y devolver el nombre de usuario si existe,
-//-- null en caso contrario.
+//Analizar la cookie y devolver el nombre de usuario si existe
 function get_user(req) {
   
   //-- Leer la cookie recibida
@@ -124,7 +129,7 @@ function get_user(req) {
 }
 
 //Funcion para crear las cookies al añadir articulos al carrito
-function add_al_carrito(req, res, producto) {
+function add_carrito(req, res, producto) {
   const cookie = req.headers.cookie;
 
   if (cookie) {
@@ -160,6 +165,18 @@ function get_carrito(req){
     let num_cam1 = 0;
     let cam2 = '';
     let num_cam2 = 0;
+    let pan1 = '';
+    let num_pan1 = 0;
+    let pan2 = '';
+    let num_pan2 = 0;
+    let ves1 = '';
+    let num_ves1 = 0;
+    let ves2 = '';
+    let num_ves2 = 0;
+    let bol1 = '';
+    let num_bol1 = 0;
+    let bol2 = '';
+    let num_bol2 = 0;
 
     pares.forEach((element, index) => {
       let [nombre, valor] = element.split('=');
@@ -177,6 +194,36 @@ function get_carrito(req){
               cam2= productos_disp[1][0];
             }
             num_cam2 += 1;
+          }else if (producto == 'pan1'){
+            if (num_pan1 == 0){
+              pan1= productos_disp[2][0];
+            }
+            num_pan1 += 1;
+          }else if (producto == 'pan2'){
+            if (num_pan2 == 0){
+              pan2= productos_disp[3][0];
+            }
+            num_pan2 += 1;
+          }else if (producto == 'ves1'){
+            if (num_ves1 == 0){
+              ves1= productos_disp[4][0];
+            }
+            num_ves1 += 1;
+          }else if (producto == 'ves2'){
+            if (num_ves2 == 0){
+              ves2= productos_disp[5][0];
+            }
+            num_ves2 += 1;
+          }else if (producto == 'bol1'){
+            if (num_bol1 == 0){
+              bol1= productos_disp[6][0];
+            }
+            num_bol1 += 1;
+          }else if (producto == 'bol2'){
+            if (num_bol2 == 0){
+              bol2= productos_disp[7][0];
+            }
+            num_bol2 += 1;
           }
         });
 
@@ -186,7 +233,25 @@ function get_carrito(req){
         if (num_cam2 != 0) {
           cam2 += ' x ' + num_cam2;
         }
-        carrito = cam1 + '<br>' + cam2 + '<br>';
+        if (num_pan1 != 0) {
+          pan1 += ' x ' + num_pan1;
+        }
+        if (num_pan2 != 0) {
+          pan2 += ' x ' + num_pan2;
+        }
+        if (num_ves1 != 0) {
+          ves1 += ' x ' + num_ves1;
+        }
+        if (num_ves2 != 0) {
+          ves2 += ' x ' + num_ves2;
+        }
+        if (num_bol1 != 0) {
+          bol1 += ' x ' + num_bol1;
+        }
+        if (num_bol2 != 0) {
+          bol2 += ' x ' + num_bol2;
+        }
+        carrito = cam1 + '<br>' + cam2 + '<br>' + pan1 + '<br>' + pan2 + '<br>' + ves1 + '<br>' + ves2 + '<br>' + bol1 + '<br>' + bol2 + '<br>';
       }
     });
     return carrito || null;
@@ -202,7 +267,6 @@ function get_producto(n, content) {
   
   return content;
 }
-
 
 //Creación del servidor
 const server = http.createServer((req, res) => {
@@ -253,13 +317,49 @@ const server = http.createServer((req, res) => {
       content = get_producto(n, content);
       break;
 
+    case 'articulo3': 
+      n = 2;
+      content = ARTICULO3;
+      content = get_producto(n, content);
+      break;
+
+    case 'articulo4': 
+      n = 3;
+      content = ARTICULO4;
+      content = get_producto(n, content);
+      break;
+
+    case 'articulo5': 
+      n = 4;
+      content = ARTICULO5;
+      content = get_producto(n, content);
+      break;
+
+    case 'articulo6': 
+      n = 5;
+      content = ARTICULO6;
+      content = get_producto(n, content);
+      break;
+
+    case 'articulo7': 
+      n = 6;
+      content = ARTICULO7;
+      content = get_producto(n, content);
+      break;
+
+    case 'articulo8': 
+      n = 7;
+      content = ARTICULO8;
+      content = get_producto(n, content);
+      break;
+
     //Añadir al carrito los distintos productos      
     case 'add_cam1':
       content = ADD_OK;
       if (carrito_existe) {
-        add_al_carrito(req, res, 'camiseta1');
+        add_carrito(req, res, 'cam1');
       }else{
-        res.setHeader('Set-Cookie', 'carrito=camiseta1');
+        res.setHeader('Set-Cookie', 'carrito=cam1');
         carrito_existe = true;
       }
       //Si se esta registrado se muestra el acceso al carrito,
@@ -279,9 +379,9 @@ const server = http.createServer((req, res) => {
     case 'add_cam2':
       content = ADD_OK;
       if (carrito_existe) {
-        add_al_carrito(req, res, 'camiseta2');
+        add_carrito(req, res, 'cam2');
       }else{
-        res.setHeader('Set-Cookie', 'carrito=camiseta2');
+        res.setHeader('Set-Cookie', 'carrito=cam2');
         carrito_existe = true;
       }
 
@@ -295,6 +395,120 @@ const server = http.createServer((req, res) => {
         }
       break;
     
+    case 'add_pan1':
+      content = ADD_OK;
+      if (carrito_existe) {
+        add_carrito(req, res, 'pan1');
+      }else{
+        res.setHeader('Set-Cookie', 'carrito=pan1');
+        carrito_existe = true;
+      }
+
+      user_registrado = get_user(req);
+        if (user_registrado) {
+          content = ADD_OK.replace("HTML_EXTRA", 
+                    `<form action="/carrito" method="get"><input type="submit" value="Ver carrito"/></form>`);
+        }else{
+          content = ADD_OK.replace("HTML_EXTRA", 
+                    `<form action="/login" method="get"><input type="submit" value="Login"/></form>`);
+        }
+      break;
+
+    case 'add_pan2':
+      content = ADD_OK;
+      if (carrito_existe) {
+        add_carrito(req, res, 'pan2');
+      }else{
+        res.setHeader('Set-Cookie', 'carrito=pan2');
+        carrito_existe = true;
+      }
+
+      user_registrado = get_user(req);
+        if (user_registrado) {
+          content = ADD_OK.replace("HTML_EXTRA", 
+                    `<form action="/carrito" method="get"><input type="submit" value="Ver carrito"/></form>`);
+        }else{
+          content = ADD_OK.replace("HTML_EXTRA", 
+                    `<form action="/login" method="get"><input type="submit" value="Login"/></form>`);
+        }
+      break;
+
+    case 'add_ves1':
+      content = ADD_OK;
+      if (carrito_existe) {
+        add_carrito(req, res, 'ves1');
+      }else{
+        res.setHeader('Set-Cookie', 'carrito=ves1');
+        carrito_existe = true;
+      }
+
+      user_registrado = get_user(req);
+        if (user_registrado) {
+          content = ADD_OK.replace("HTML_EXTRA", 
+                    `<form action="/carrito" method="get"><input type="submit" value="Ver carrito"/></form>`);
+        }else{
+          content = ADD_OK.replace("HTML_EXTRA", 
+                    `<form action="/login" method="get"><input type="submit" value="Login"/></form>`);
+        }
+      break;
+
+    case 'add_ves2':
+      content = ADD_OK;
+      if (carrito_existe) {
+        add_carrito(req, res, 'ves2');
+      }else{
+        res.setHeader('Set-Cookie', 'carrito=ves2');
+        carrito_existe = true;
+      }
+
+      user_registrado = get_user(req);
+        if (user_registrado) {
+          content = ADD_OK.replace("HTML_EXTRA", 
+                    `<form action="/carrito" method="get"><input type="submit" value="Ver carrito"/></form>`);
+        }else{
+          content = ADD_OK.replace("HTML_EXTRA", 
+                    `<form action="/login" method="get"><input type="submit" value="Login"/></form>`);
+        }
+      break;
+
+    case 'add_bol1':
+      content = ADD_OK;
+      if (carrito_existe) {
+        add_carrito(req, res, 'bol1');
+      }else{
+        res.setHeader('Set-Cookie', 'carrito=bol1');
+        carrito_existe = true;
+      }
+
+      user_registrado = get_user(req);
+        if (user_registrado) {
+          content = ADD_OK.replace("HTML_EXTRA", 
+                    `<form action="/carrito" method="get"><input type="submit" value="Ver carrito"/></form>`);
+        }else{
+          content = ADD_OK.replace("HTML_EXTRA", 
+                    `<form action="/login" method="get"><input type="submit" value="Login"/></form>`);
+        }
+      break;
+
+    case 'add_bol2':
+      content = ADD_OK;
+      if (carrito_existe) {
+        add_carrito(req, res, 'bol2');
+      }else{
+        res.setHeader('Set-Cookie', 'carrito=bol2');
+        carrito_existe = true;
+      }
+
+      user_registrado = get_user(req);
+        if (user_registrado) {
+          content = ADD_OK.replace("HTML_EXTRA", 
+                    `<form action="/carrito" method="get"><input type="submit" value="Ver carrito"/></form>`);
+        }else{
+          content = ADD_OK.replace("HTML_EXTRA", 
+                    `<form action="/login" method="get"><input type="submit" value="Login"/></form>`);
+        }
+      break;
+      
     case 'carrito':
       content = CARRITO;
       let carrito = get_carrito(req);
@@ -378,7 +592,7 @@ const server = http.createServer((req, res) => {
         tienda[2]["pedidos"].push(pedido);
         //Convertir a JSON y registrarlo
         let myTienda = JSON.stringify(tienda, null, 4);
-        fs.writeFileSync(FICHERO_JSON_PRUEBA, myTienda);
+        fs.writeFileSync(FICHERO_JSON_OUT, myTienda);
       }
       //Confirmar pedido
       console.log('Pedido procesado correctamente');
@@ -425,6 +639,30 @@ const server = http.createServer((req, res) => {
       n = 1;
       content = ARTICULO2;
       content = get_producto(n, content);
+    }else if(busqueda == 'pantalon1'){
+      n = 2;
+      content = ARTICULO3;
+      content = get_producto(n, content);
+    }else if(busqueda == 'pantalon2'){
+      n = 3;
+      content = ARTICULO4;
+      content = get_producto(n, content);
+    }else if(busqueda == 'vestido1'){
+      n = 4;
+      content = ARTICULO5;
+      content = get_producto(n, content);
+    }else if(busqueda == 'vestido2'){
+      n = 5;
+      content = ARTICULO6;
+      content = get_producto(n, content);
+    }else if(busqueda == 'bolso1'){
+      n = 6;
+      content = ARTICULO7;
+      content = get_producto(n, content);
+    }else if(busqueda == 'bolso2'){
+      n = 7;
+      content = ARTICULO8;
+      content = get_producto(n, content);
     }
     break;
 
@@ -444,6 +682,7 @@ const server = http.createServer((req, res) => {
     
     return;
     break;
+    
   default:
     path = url.pathname.split('/');
     ext = '';
