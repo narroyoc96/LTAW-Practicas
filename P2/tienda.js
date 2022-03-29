@@ -55,8 +55,8 @@ const LOGIN_KO = fs.readFileSync('form-error-respuest.html', 'utf-8');
 const LOGIN_USER = fs.readFileSync('user-login.html', 'utf-8');
 
 //Página comprar formulario y respuesta
-const PEDIDO_OK = fs.readFileSync('pedido.html','utf-8');
-const ADD_OK = fs.readFileSync('pedido-realizado.html', 'utf-8');
+const PEDIDO_OK = fs.readFileSync('pedido-realizado.html','utf-8');
+const ADD_OK = fs.readFileSync('añadir.html', 'utf-8');
 
 //Página carrito
 const CARRITO = fs.readFileSync('carrito.html', 'utf-8');

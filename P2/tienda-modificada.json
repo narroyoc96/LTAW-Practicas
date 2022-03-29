@@ -4,14 +4,49 @@
             {
                 "nombre": "camiseta1",
                 "descripcion": "Camiseta gráfico texto",
-                "stock": 20,
+                "stock": 16,
                 "precio": 7.99
-                        
             },
             {
                 "nombre": "camiseta2",
                 "descripcion": "Camiseta mujeres ilustradas",
                 "stock": 20,
+                "precio": 12.99
+            },
+            {
+                "nombre": "pantalon1",
+                "descripcion": "Pantalón wide leg",
+                "stock": 20,
+                "precio": 19.99
+            },
+            {
+                "nombre": "pantalon2",
+                "descripcion": "Pantalón culotte vestir",
+                "stock": 18,
+                "precio": 29.99
+            },
+            {
+                "nombre": "vestido1",
+                "descripcion": "Vestido midi manga larga",
+                "stock": 20,
+                "precio": 19.99
+            },
+            {
+                "nombre": "vestido2",
+                "descripcion": "America vestido",
+                "stock": 20,
+                "precio": 35.99
+            },
+            {
+                "nombre": "bolso1",
+                "descripcion": "Bandolera piel fleco",
+                "stock": 20,
+                "precio": 39.99
+            },
+            {
+                "nombre": "bolso2",
+                "descripcion": "Bandolera cierra",
+                "stock": 16,
                 "precio": 12.99
             }
         ]
@@ -38,7 +73,7 @@
                 "tarjeta": "1234",
                 "productos": [
                     "camiseta1 x2",
-                    "camiseta2 x1"
+                    ""
                 ]
             },
             {
@@ -47,7 +82,71 @@
                 "tarjeta": "5678",
                 "productos": [
                     "",
-                    "camiseta2 x1"
+                    "camiseta2 x4"
+                ]
+            },
+            {
+                "user": "root",
+                "dirección": "calle talavera",
+                "tarjeta": "",
+                "productos": [
+                    "camiseta1 x 1",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "bolso2 x 1",
+                    ""
+                ]
+            },
+            {
+                "user": "narroyoc",
+                "dirección": "",
+                "tarjeta": "",
+                "productos": [
+                    "camiseta1 x 1",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "bolso2 x 1",
+                    ""
+                ]
+            },
+            {
+                "user": "root",
+                "dirección": "",
+                "tarjeta": "",
+                "productos": [
+                    "camiseta1 x 1",
+                    "",
+                    "",
+                    "pantalon2 x 1",
+                    "",
+                    "",
+                    "",
+                    "bolso2 x 1",
+                    ""
+                ]
+            },
+            {
+                "user": "root",
+                "dirección": "",
+                "tarjeta": "",
+                "productos": [
+                    "camiseta1 x 1",
+                    "",
+                    "",
+                    "pantalon2 x 1",
+                    "",
+                    "",
+                    "",
+                    "bolso2 x 1",
+                    ""
                 ]
             }
         ]
