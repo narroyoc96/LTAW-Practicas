@@ -4,19 +4,23 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Boutique Vintage</title>
+        <link rel="stylesheet" href="formulario.css">
         <link rel="icon" href="imagen/boutique.ico">
     </head>
     <body>
-        <a href="/"><img src="imagen/tienda.PNG"></a>
-        <h1>CARRITO:</h1>
-        <div>
-            PRODUCTOS
-        </div>
+        <a href="/" id="cabecera"><img src="imagen/tienda.PNG"></a>
 
-        <br>
-        <form action="/pedido" method="get">
-            <input type="submit" value="Finalizar compra"/>
-        </form>
-        <a class='button' href="/">Acceso a pagina principal</a>
+        <div id="respuesta">
+            <h1>CARRITO:</h1>
+            PRODUCTOS
+            <div id="finalizar">
+                <form action="/pedido" method="get">
+                    <input type="submit" value="Finalizar compra"/>
+                </form>
+            </div>
+            
+            <a class='button' href="/">Acceso a pagina principal</a>
+        </div>
+        
     </body>
 </html>

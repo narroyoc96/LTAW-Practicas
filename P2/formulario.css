@@ -1,0 +1,85 @@
+body{
+    background-color: rgb(255, 185, 238);
+    background-size: cover;
+}
+
+#cabecera{
+    margin-top: 50px;
+    /*centrar imagen centro*/
+    height: 100px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#respuesta{
+    text-align: center;
+    margin-left: 120px ;
+    margin-right: 120px ;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+#bienvenido{
+    text-align: center; 
+    font-weight: bold;
+    margin-top: 40px;
+    font-size: 30px;
+    font: small-caps 100%/200% serif;
+    font-size: 20px;
+    /*font-family: "Curier New";*/
+    font-style: italic;
+    color: black;
+    margin-top: 30px;
+}
+
+h2{
+    text-align: center; 
+    font-weight: bold;
+    margin-top: 40px;
+    font-size: 30px;
+    font: small-caps 100%/200% serif;
+    font-size: 20px;
+    /*font-family: "Curier New";*/
+    font-style: italic;
+    color: black;
+    margin-top: 30px;
+}
+.button{
+    cursor: pointer;
+    text-align: center;
+    margin: 5px; /*margen entre botones*/
+    padding: 0;
+    color:rgb(41, 40, 40);
+    font-weight: bold;
+    font-size: 1em; /*tamaño letra dentro de botones*/
+    border: none;
+    border-color: transparent;
+    border-style: ridge;
+    border-radius: 10px;
+    background-color: transparent;
+    font-size: 20px;
+}
+
+.button:hover{
+    background-color: rgb(204, 79, 175);
+    color: whitesmoke;
+}
+
+#finalizar{
+    cursor: pointer;
+    text-align: center;
+    margin: 5px; /*margen entre botones*/
+    padding: 0;
+    color:rgb(41, 40, 40);
+    font-weight: bold;
+    font-size: 1em; /*tamaño letra dentro de botones*/
+    border: none;
+    border-color: transparent;
+    border-style: ridge;
+    border-radius: 10px;
+    background-color: transparent;
+    font-size: 20px;
+}

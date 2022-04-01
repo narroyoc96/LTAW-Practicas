@@ -4,7 +4,7 @@
             {
                 "nombre": "camiseta1",
                 "descripcion": "Camiseta gráfico texto",
-                "stock": 16,
+                "stock": 20,
                 "precio": 7.99
             },
             {
@@ -46,7 +46,7 @@
             {
                 "nombre": "bolso2",
                 "descripcion": "Bandolera cierra",
-                "stock": 16,
+                "stock": 20,
                 "precio": 12.99
             }
         ]
@@ -87,33 +87,17 @@
             },
             {
                 "user": "root",
-                "dirección": "calle talavera",
-                "tarjeta": "",
-                "productos": [
-                    "camiseta1 x 1",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "",
-                    "bolso2 x 1",
-                    ""
-                ]
-            },
-            {
-                "user": "narroyoc",
                 "dirección": "",
                 "tarjeta": "",
                 "productos": [
-                    "camiseta1 x 1",
+                    "",
+                    "",
+                    "",
+                    "pantalon2 x 1",
                     "",
                     "",
                     "",
                     "",
-                    "",
-                    "",
-                    "bolso2 x 1",
                     ""
                 ]
             },
@@ -122,30 +106,14 @@
                 "dirección": "",
                 "tarjeta": "",
                 "productos": [
-                    "camiseta1 x 1",
+                    "",
                     "",
                     "",
                     "pantalon2 x 1",
                     "",
                     "",
                     "",
-                    "bolso2 x 1",
-                    ""
-                ]
-            },
-            {
-                "user": "root",
-                "dirección": "",
-                "tarjeta": "",
-                "productos": [
-                    "camiseta1 x 1",
                     "",
-                    "",
-                    "pantalon2 x 1",
-                    "",
-                    "",
-                    "",
-                    "bolso2 x 1",
                     ""
                 ]
             }
