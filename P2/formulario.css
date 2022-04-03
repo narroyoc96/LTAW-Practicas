@@ -83,3 +83,29 @@ h2{
     background-color: transparent;
     font-size: 20px;
 }
+
+#imagen1{
+    margin-top: 35px;
+    /*centrar imagen centro*/
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#descripcion{
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+#precio{
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

@@ -16,13 +16,13 @@
             {
                 "nombre": "pantalon1",
                 "descripcion": "Pantalón wide leg",
-                "stock": 20,
+                "stock": 19,
                 "precio": 19.99
             },
             {
                 "nombre": "pantalon2",
                 "descripcion": "Pantalón culotte vestir",
-                "stock": 18,
+                "stock": 20,
                 "precio": 29.99
             },
             {
@@ -87,29 +87,13 @@
             },
             {
                 "user": "root",
-                "dirección": "",
-                "tarjeta": "",
+                "dirección": "1256",
+                "tarjeta": "1256",
                 "productos": [
                     "",
                     "",
+                    "pantalon1 x 1",
                     "",
-                    "pantalon2 x 1",
-                    "",
-                    "",
-                    "",
-                    "",
-                    ""
-                ]
-            },
-            {
-                "user": "root",
-                "dirección": "",
-                "tarjeta": "",
-                "productos": [
-                    "",
-                    "",
-                    "",
-                    "pantalon2 x 1",
                     "",
                     "",
                     "",
