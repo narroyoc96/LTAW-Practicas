@@ -3,6 +3,16 @@ body{
     background-size: cover;
 }
 
+#login{
+    margin-top: 40px;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #cabecera{
     margin-top: 50px;
     /*centrar imagen centro*/

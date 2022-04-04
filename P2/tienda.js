@@ -296,10 +296,11 @@ const server = http.createServer((req, res) => {
       content = TIENDA;
       let user = get_user(req);
       if (user) {
-        content = TIENDA.replace("HTML_EXTRA", "<h2>Usuario: " + user + "</h2>" + `<form action="/carrito" method="get"><input type="submit" value="Carrito"/></form>`);
+        content = TIENDA.replace("HTML_EXTRA", "<h2>Usuario: " + user + "</h2>" + 
+                                  `<a href="/carrito"><img src="imagen/carrito.png" alt="user" id="carrito"></a>`);
 
       } else {
-        content = TIENDA.replace("HTML_EXTRA", `<form action="/login" method="get"><input type="submit" value="Login"/></form>`);
+        content = TIENDA.replace("HTML_EXTRA", '<a href="/login"><img src="imagen/login.png" alt="user" id="login"></a>');
 
       }
       break;
@@ -372,7 +373,7 @@ const server = http.createServer((req, res) => {
         }else{
           //Mostrar enlace formulario Login
           content = ADD_OK.replace("HTML_EXTRA", 
-                    `<form action="/login" method="get"><input type="submit" value="Login"/></form>`);
+                    `<a href="/login"><img src="imagen/login.png" alt="user" id="login"></a>`);
         }
       break;
 
@@ -391,7 +392,7 @@ const server = http.createServer((req, res) => {
                     `<form action="/carrito" method="get"><input type="submit" value="Ver carrito"/></form>`);
         }else{
           content = ADD_OK.replace("HTML_EXTRA", 
-                    `<form action="/login" method="get"><input type="submit" value="Login"/></form>`);
+                    `<a href="/login"><img src="imagen/login.png" alt="user" id="login"></a>`);
         }
       break;
     
@@ -410,7 +411,7 @@ const server = http.createServer((req, res) => {
                     `<form action="/carrito" method="get"><input type="submit" value="Ver carrito"/></form>`);
         }else{
           content = ADD_OK.replace("HTML_EXTRA", 
-                    `<form action="/login" method="get"><input type="submit" value="Login"/></form>`);
+                    `<a href="/login"><img src="imagen/login.png" alt="user" id="login"></a>`);
         }
       break;
 
@@ -429,7 +430,7 @@ const server = http.createServer((req, res) => {
                     `<form action="/carrito" method="get"><input type="submit" value="Ver carrito"/></form>`);
         }else{
           content = ADD_OK.replace("HTML_EXTRA", 
-                    `<form action="/login" method="get"><input type="submit" value="Login"/></form>`);
+                    `<a href="/login"><img src="imagen/login.png" alt="user" id="login"></a>`);
         }
       break;
 
@@ -448,7 +449,7 @@ const server = http.createServer((req, res) => {
                     `<form action="/carrito" method="get"><input type="submit" value="Ver carrito"/></form>`);
         }else{
           content = ADD_OK.replace("HTML_EXTRA", 
-                    `<form action="/login" method="get"><input type="submit" value="Login"/></form>`);
+                    `<a href="/login"><img src="imagen/login.png" alt="user" id="login"></a>`);
         }
       break;
 
@@ -467,7 +468,7 @@ const server = http.createServer((req, res) => {
                     `<form action="/carrito" method="get"><input type="submit" value="Ver carrito"/></form>`);
         }else{
           content = ADD_OK.replace("HTML_EXTRA", 
-                    `<form action="/login" method="get"><input type="submit" value="Login"/></form>`);
+                    `<a href="/login"><img src="imagen/login.png" alt="user" id="login"></a>`);
         }
       break;
 
@@ -486,7 +487,7 @@ const server = http.createServer((req, res) => {
                     `<form action="/carrito" method="get"><input type="submit" value="Ver carrito"/></form>`);
         }else{
           content = ADD_OK.replace("HTML_EXTRA", 
-                    `<form action="/login" method="get"><input type="submit" value="Login"/></form>`);
+                    `<a href="/login"><img src="imagen/login.png" alt="user" id="login"></a>`);
         }
       break;
 
@@ -505,7 +506,7 @@ const server = http.createServer((req, res) => {
                     `<form action="/carrito" method="get"><input type="submit" value="Ver carrito"/></form>`);
         }else{
           content = ADD_OK.replace("HTML_EXTRA", 
-                    `<form action="/login" method="get"><input type="submit" value="Login"/></form>`);
+                    `<a href="/login"><img src="imagen/login.png" alt="user" id="login"></a>`);
         }
       break;
       

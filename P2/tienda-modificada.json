@@ -16,13 +16,13 @@
             {
                 "nombre": "pantalon1",
                 "descripcion": "Pantalón wide leg",
-                "stock": 19,
+                "stock": 20,
                 "precio": 19.99
             },
             {
                 "nombre": "pantalon2",
                 "descripcion": "Pantalón culotte vestir",
-                "stock": 20,
+                "stock": 19,
                 "precio": 29.99
             },
             {
@@ -40,7 +40,7 @@
             {
                 "nombre": "bolso1",
                 "descripcion": "Bandolera piel fleco",
-                "stock": 20,
+                "stock": 19,
                 "precio": 39.99
             },
             {
@@ -87,16 +87,16 @@
             },
             {
                 "user": "root",
-                "dirección": "1256",
-                "tarjeta": "1256",
+                "dirección": "1234",
+                "tarjeta": "1234",
                 "productos": [
                     "",
                     "",
-                    "pantalon1 x 1",
+                    "",
+                    "pantalon2 x 1",
                     "",
                     "",
-                    "",
-                    "",
+                    "bolso1 x 1",
                     "",
                     ""
                 ]
