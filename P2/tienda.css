@@ -10,13 +10,6 @@ body{
     align-items: center;
 }
 
-.nuevo{
-    background-color: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 #login{
     margin-top: 40px;
     width: 40px;

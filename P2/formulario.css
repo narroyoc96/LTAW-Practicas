@@ -1,16 +1,21 @@
 body{
-    background-color: rgb(255, 185, 238);
+    background-color: rgb(128, 0, 113);
     background-size: cover;
 }
 
-#login{
-    margin-top: 40px;
-    width: 60px;
-    height: 60px;
+.nuevo{
     background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#login{
+    margin-top: 20px;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+    
 }
 
 #cabecera{
@@ -45,6 +50,19 @@ body{
     margin-top: 30px;
 }
 
+h1{
+    text-align: center; 
+    font-weight: bold;
+    margin-top: 40px;
+    font-size: 30px;
+    font: small-caps 100%/200% serif;
+    font-size: 30px;
+    /*font-family: "Curier New";*/
+    font-style: normal;
+    color: black;
+    margin-top: 30px;
+}
+
 h2{
     text-align: center; 
     font-weight: bold;
@@ -57,25 +75,26 @@ h2{
     color: black;
     margin-top: 30px;
 }
+
 .button{
     cursor: pointer;
     text-align: center;
     margin: 5px; /*margen entre botones*/
     padding: 0;
-    color:rgb(41, 40, 40);
     font-weight: bold;
     font-size: 1em; /*tamaño letra dentro de botones*/
     border: none;
     border-color: transparent;
-    border-style: ridge;
-    border-radius: 10px;
+    border-style: outset;
+    border-radius: 8px;
     background-color: transparent;
+    color: lightskyblue;
     font-size: 20px;
 }
 
 .button:hover{
-    background-color: rgb(204, 79, 175);
-    color: whitesmoke;
+    background-color: lightskyblue;
+    color: rgb(0, 0, 0);
 }
 
 #finalizar{

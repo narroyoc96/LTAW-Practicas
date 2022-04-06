@@ -264,7 +264,7 @@ function get_producto(n, content) {
   content = content.replace('NOMBRE', productos_disp[n][0]);
   content = content.replace('DESCRIPCION', productos_disp[n][1]);
   content = content.replace('PRECIO', productos_disp[n][3]);
-  
+
   return content;
 }
 
