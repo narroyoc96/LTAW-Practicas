@@ -1,5 +1,5 @@
 body{
-    background-image: url(imagen/prueba.jpg);
+    background-image: url(imagen/acuarela.jpg);
     background-size: cover;
 }
 
@@ -24,7 +24,7 @@ body{
 }
 
 #caja{
-    border-color: rgb(255, 134, 225);
+    border-color: rgb(135, 250, 196);
     border-radius: 8px;
     border-style: solid;
 }
@@ -47,7 +47,7 @@ h2{
     font: small-caps 100%/200% serif;
     font-size: 30px;
     /*font-family: "Curier New";*/
-    font-style: italic;
+    font-style: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: rgb(0, 0, 0);
     margin-top: 30px;
     
@@ -64,7 +64,7 @@ h2{
 #inicio{
     text-align:center;
     background-color:transparent;
-    font-family: garamont;
+    font-style: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
     margin-top: 50px;
 
 }
@@ -91,7 +91,7 @@ h2{
 }
 
 .red:hover{
-    background-color: rgb(253, 242, 249);
+    background-color: rgb(255, 163, 221);
 
 }
 
@@ -109,6 +109,7 @@ button{
     border-radius: 10px;
     background-color: transparent;
     font-size: 20px;
+    font-style: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
 }
 
 button:hover{
@@ -116,4 +117,12 @@ button:hover{
     color: whitesmoke;
 }
 
-
+h3{
+    background: linear-gradient(rgb(122, 200, 117),rgb(57, 151, 60), rgb(17, 91, 0));
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
+    font-size: 30px;
+    font-style: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    margin-top: 25px;
+}

@@ -1,5 +1,5 @@
 body{
-    background-image: url(imagen/prueba.jpg);
+    background-image: url(imagen/acuarela.jpg);
     background-size: cover;
 }
 
@@ -42,7 +42,7 @@ body{
 }
 
 .red:hover{
-    background-color: rgb(255, 183, 231);
+    background-color: rgb(255, 163, 221);
 
 }
 
@@ -60,6 +60,7 @@ body{
     border-radius: 10px;
     background-color: transparent;
     font-size: 20px;
+    font-style: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .btn:hover{
@@ -75,7 +76,7 @@ h2{
     font: small-caps 100%/200% serif;
     font-size: 30px;
     /*font-family: "Curier New";*/
-    font-style: italic;
+    font-style: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: black;
 }
 

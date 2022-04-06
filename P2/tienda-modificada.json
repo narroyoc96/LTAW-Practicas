@@ -2,52 +2,52 @@
     {
         "productos": [
             {
-                "nombre": "camiseta1",
-                "descripcion": "Camiseta gráfico texto",
-                "stock": 20,
-                "precio": 7.99
-            },
-            {
-                "nombre": "camiseta2",
-                "descripcion": "Camiseta mujeres ilustradas",
-                "stock": 20,
-                "precio": 12.99
-            },
-            {
-                "nombre": "pantalon1",
-                "descripcion": "Pantalón wide leg",
-                "stock": 20,
-                "precio": 19.99
-            },
-            {
-                "nombre": "pantalon2",
-                "descripcion": "Pantalón culotte vestir",
+                "nombre": "Camiseta gráfico texto",
+                "descripcion": "Camiseta de cuello redondo y manga corta",
                 "stock": 19,
-                "precio": 29.99
+                "precio": "7.99€"
             },
             {
-                "nombre": "vestido1",
-                "descripcion": "Vestido midi manga larga",
+                "nombre": "Camiseta mujeres ilustradas",
+                "descripcion": "Camiseta de cuello redondo y manga corta",
                 "stock": 20,
-                "precio": 19.99
+                "precio": "12.99€"
             },
             {
-                "nombre": "vestido2",
-                "descripcion": "America vestido",
+                "nombre": "Pantalón wide leg",
+                "descripcion": "Pantalón de tiro alto con bolsillos delanteros",
                 "stock": 20,
-                "precio": 35.99
+                "precio": "19.99€"
             },
             {
-                "nombre": "bolso1",
-                "descripcion": "Bandolera piel fleco",
-                "stock": 19,
-                "precio": 39.99
-            },
-            {
-                "nombre": "bolso2",
-                "descripcion": "Bandolera cierra",
+                "nombre": "Pantalón culotte vestir",
+                "descripcion": "Pantalón de tiro alto con pernera recta",
                 "stock": 20,
-                "precio": 12.99
+                "precio": "29.99€"
+            },
+            {
+                "nombre": "Vestido midi manga larga",
+                "descripcion": "Vestido midi ajustado de cuello redondo y manga corta",
+                "stock": 20,
+                "precio": "19.99€"
+            },
+            {
+                "nombre": "America vestido",
+                "descripcion": "Americana con solapa, con manga larga y hombros marcados",
+                "stock": 20,
+                "precio": "35.99€"
+            },
+            {
+                "nombre": "Bandolera piel fleco",
+                "descripcion": "Medidas(cm): 28x29x9",
+                "stock": 20,
+                "precio": "39.99€"
+            },
+            {
+                "nombre": "Bandolera cierra",
+                "descripcion": "Medidas(cm): 22x13x7",
+                "stock": 20,
+                "precio": "12.99€"
             }
         ]
     },
@@ -86,17 +86,17 @@
                 ]
             },
             {
-                "user": "root",
+                "user": "narroyoc",
                 "dirección": "1234",
                 "tarjeta": "1234",
                 "productos": [
+                    "Camiseta gráfico texto x 1",
                     "",
                     "",
                     "",
-                    "pantalon2 x 1",
                     "",
                     "",
-                    "bolso1 x 1",
+                    "",
                     "",
                     ""
                 ]

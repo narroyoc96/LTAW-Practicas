@@ -296,7 +296,7 @@ const server = http.createServer((req, res) => {
       content = TIENDA;
       let user = get_user(req);
       if (user) {
-        content = TIENDA.replace("HTML_EXTRA", "<h2>Usuario: " + user + "</h2>" + 
+        content = TIENDA.replace("HTML_EXTRA", "<h3>Usuario: " + user + "</h3>" + 
                                   `<a href="/carrito"><img src="imagen/carrito.png" alt="user" id="carrito"></a>`);
 
       } else {
@@ -369,7 +369,7 @@ const server = http.createServer((req, res) => {
         if (user_registrado) {
           //Mostrar enlace formulario Login
           content = ADD_OK.replace("HTML_EXTRA", 
-                    `<form action="/carrito" method="get"><input type="submit" value="Ver carrito"/></form>`);
+                    `<form action="/carrito" method="get"><input class="button" type="submit" value="IR A LA CESTA"/></form>`);
         }else{
           //Mostrar enlace formulario Login
           content = ADD_OK.replace("HTML_EXTRA", 
@@ -389,7 +389,7 @@ const server = http.createServer((req, res) => {
       user_registrado = get_user(req);
         if (user_registrado) {
           content = ADD_OK.replace("HTML_EXTRA", 
-                    `<form action="/carrito" method="get"><input type="submit" value="Ver carrito"/></form>`);
+                    `<form action="/carrito" method="get"><input class="button" type="submit" value="IR A LA CESTA"/></form>`);
         }else{
           content = ADD_OK.replace("HTML_EXTRA", 
                     `<a href="/login"><img src="imagen/login.png" alt="user" id="login"></a>`);
@@ -408,7 +408,7 @@ const server = http.createServer((req, res) => {
       user_registrado = get_user(req);
         if (user_registrado) {
           content = ADD_OK.replace("HTML_EXTRA", 
-                    `<form action="/carrito" method="get"><input type="submit" value="Ver carrito"/></form>`);
+                    `<form action="/carrito" method="get"><input class="button" type="submit" value="IR A LA CESTA"/></form>`);
         }else{
           content = ADD_OK.replace("HTML_EXTRA", 
                     `<a href="/login"><img src="imagen/login.png" alt="user" id="login"></a>`);
@@ -427,7 +427,7 @@ const server = http.createServer((req, res) => {
       user_registrado = get_user(req);
         if (user_registrado) {
           content = ADD_OK.replace("HTML_EXTRA", 
-                    `<form action="/carrito" method="get"><input type="submit" value="Ver carrito"/></form>`);
+                    `<form action="/carrito" method="get"><input class="button" type="submit" value="IR A LA CESTA"/></form>`);
         }else{
           content = ADD_OK.replace("HTML_EXTRA", 
                     `<a href="/login"><img src="imagen/login.png" alt="user" id="login"></a>`);
@@ -446,7 +446,7 @@ const server = http.createServer((req, res) => {
       user_registrado = get_user(req);
         if (user_registrado) {
           content = ADD_OK.replace("HTML_EXTRA", 
-                    `<form action="/carrito" method="get"><input type="submit" value="Ver carrito"/></form>`);
+                    `<form action="/carrito" method="get"><input class="button" type="submit" value="IR A LA CESTA"/></form>`);
         }else{
           content = ADD_OK.replace("HTML_EXTRA", 
                     `<a href="/login"><img src="imagen/login.png" alt="user" id="login"></a>`);
@@ -465,7 +465,7 @@ const server = http.createServer((req, res) => {
       user_registrado = get_user(req);
         if (user_registrado) {
           content = ADD_OK.replace("HTML_EXTRA", 
-                    `<form action="/carrito" method="get"><input type="submit" value="Ver carrito"/></form>`);
+                    `<form action="/carrito" method="get"><input class="button" type="submit" value="IR A LA CESTA"/></form>`);
         }else{
           content = ADD_OK.replace("HTML_EXTRA", 
                     `<a href="/login"><img src="imagen/login.png" alt="user" id="login"></a>`);
@@ -484,7 +484,7 @@ const server = http.createServer((req, res) => {
       user_registrado = get_user(req);
         if (user_registrado) {
           content = ADD_OK.replace("HTML_EXTRA", 
-                    `<form action="/carrito" method="get"><input type="submit" value="Ver carrito"/></form>`);
+                    `<form action="/carrito" method="get"><input class="button" type="submit" value="IR A LA CESTA"/></form>`);
         }else{
           content = ADD_OK.replace("HTML_EXTRA", 
                     `<a href="/login"><img src="imagen/login.png" alt="user" id="login"></a>`);
@@ -503,7 +503,7 @@ const server = http.createServer((req, res) => {
       user_registrado = get_user(req);
         if (user_registrado) {
           content = ADD_OK.replace("HTML_EXTRA", 
-                    `<form action="/carrito" method="get"><input type="submit" value="Ver carrito"/></form>`);
+                    `<form action="/carrito" method="get"><input class="button" type="submit" value="IR A LA CESTA"/></form>`);
         }else{
           content = ADD_OK.replace("HTML_EXTRA", 
                     `<a href="/login"><img src="imagen/login.png" alt="user" id="login"></a>`);

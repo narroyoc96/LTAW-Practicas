@@ -1,5 +1,5 @@
 body{
-    background-image: url(imagen/fondo.jpg);
+    background-image: url(imagen/acuarela.jpg);
     background-size: cover;
 }
 
@@ -16,7 +16,7 @@ body{
 #inicio{
     text-align:center;
     background-color:transparent;
-    font-family: garamont;
+    font-style: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
     margin-top: 50px;
 
 }
@@ -35,22 +35,22 @@ body{
     border-radius: 10px;
     background-color: transparent;
     font-size: 20px;
+    font-style: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
 }
 
 .btn:hover{
     background-color: rgb(204, 79, 175);
     color: whitesmoke;
 }
-
 h2{
     text-align: center; 
     font-weight: bold;
     margin-top: 40px;
-    font-size: 30px;
+    font-size: 200px;
     font: small-caps 100%/200% serif;
     font-size: 20px;
     /*font-family: "Curier New";*/
-    font-style: italic;
+    font-style: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
     color: black;
     margin-top: 30px;
 }
@@ -61,7 +61,11 @@ h2{
     justify-content: center;
     align-items: center;
     margin-top: 25px;
-    color: rgb(255, 60, 219);
+    color: purple;
+    font-family: fantasy;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-style: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
 }
 
 #imagen{
@@ -80,12 +84,51 @@ h2{
     justify-content: center;
     align-items: center;
     margin-top: 25px;
+    color: rgb(0, 76, 16);
+    font-style: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    font-size: 20px;
 }
 
-#precio{
+.cesta{
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
+    font-weight: bold;
+    border: none;
+    border-color: transparent;
+    border-style: ridge;
+    border-radius: 10px;
+    background-color: transparent;
+    margin-left: 10px;
+
+}
+
+.cesta:hover{
+    background-color: rgb(247, 247, 247);
+}
+
+.redessociales{
+    margin-top: 35px;
     background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.red{
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
+    font-weight: bold;
+    border: none;
+    border-color: transparent;
+    border-style: ridge;
+    border-radius: 10px;
+    background-color: transparent;
+
+}
+
+.red:hover{
+    background-color: rgb(255, 163, 221);
 
 }
