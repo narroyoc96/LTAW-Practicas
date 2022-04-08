@@ -30,8 +30,11 @@ body{
 
 .cuenta{
     padding-top: 20px;
+    font-style: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    font-style: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
 }
 
 p{
@@ -103,4 +106,27 @@ p{
     font-style: normal;
     font-style: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
     margin-top: 25px;
+}
+
+#productos{
+    /*border: ridge #34e34b 2px;*/
+    border-style: outset;
+    border-width: medium;
+    background: #e2fdf4; 
+    color: #0ebd84; 
+    font-weight: bold; 
+    padding: 15px; 
+    border: 2px solid #bdfae6;
+    width: 500px;
+    height: 200px;
+    box-sizing: border-box;
+    font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+    border-radius: 35px 0px 35px 0px;
+    -moz-border-radius: 35px 0px 35px 0px;
+    -webkit-border-radius: 35px 0px 35px 0px;
+    border: 2px solid #0ebd84;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
