@@ -57,12 +57,14 @@
             {
                 "user": "root",
                 "nombre": "Root root root",
-                "email": "root@github.com"
+                "email": "root@github.com",
+                "password": "root"
             },
             {
                 "user": "narroyoc",
                 "nombre": "Noelia Arroyo Castaño",
-                "email": "noelia@github.com"
+                "email": "noelia@github.com",
+                "password": "narroyoc"
             }
         ]
     },

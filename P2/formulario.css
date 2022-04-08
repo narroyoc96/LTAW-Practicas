@@ -41,7 +41,8 @@ p{
     text-align: center;
     font-size: 20px;
     font-style: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
-    color: rgb(0, 0, 0);;
+    color: rgb(0, 0, 0);
+    
 }
 #respuesta{
     text-align: center;
@@ -129,4 +130,18 @@ p{
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.centrado{
+    margin-top: 50px;
+}
+
+#gif{
+    margin-top: 50px;
+    display: block;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 350px;
 }

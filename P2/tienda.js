@@ -84,6 +84,14 @@ tienda[1]["usuarios"].forEach((element, index)=>{
   });
 console.log();
 
+//contraseña usuarios
+let password_reg = [];
+let usuarios_reg = tienda[1]["usuarios"];
+for (i = 0; i < usuarios_reg.length; i++){
+    users_reg.push(usuarios_reg[i]["usuario"]);
+    password_reg.push(usuarios_reg[i]["password"]);
+};
+
 //Lista productos disponibles.
 let productos_disp = [];
 let product_list = [];

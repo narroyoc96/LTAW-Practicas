@@ -4,7 +4,7 @@
             {
                 "nombre": "Camiseta gráfico texto",
                 "descripcion": "Camiseta de cuello redondo y manga corta",
-                "stock": 19,
+                "stock": 20,
                 "precio": "7.99€"
             },
             {
@@ -28,7 +28,7 @@
             {
                 "nombre": "Vestido midi manga larga",
                 "descripcion": "Vestido midi ajustado de cuello redondo y manga corta",
-                "stock": 20,
+                "stock": 15,
                 "precio": "19.99€"
             },
             {
@@ -56,12 +56,14 @@
             {
                 "user": "root",
                 "nombre": "Root root root",
-                "email": "root@github.com"
+                "email": "root@github.com",
+                "password": "root"
             },
             {
                 "user": "narroyoc",
                 "nombre": "Noelia Arroyo Castaño",
-                "email": "noelia@github.com"
+                "email": "noelia@github.com",
+                "password": "narroyoc"
             }
         ]
     },
@@ -90,11 +92,75 @@
                 "dirección": "1234",
                 "tarjeta": "1234",
                 "productos": [
-                    "Camiseta gráfico texto x 1",
                     "",
                     "",
                     "",
                     "",
+                    "Vestido midi manga larga x 1",
+                    "",
+                    "",
+                    "",
+                    ""
+                ]
+            },
+            {
+                "user": "narroyoc",
+                "dirección": "1234",
+                "tarjeta": "1234",
+                "productos": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "Vestido midi manga larga x 1",
+                    "",
+                    "",
+                    "",
+                    ""
+                ]
+            },
+            {
+                "user": "narroyoc",
+                "dirección": "1234",
+                "tarjeta": "1234",
+                "productos": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "Vestido midi manga larga x 1",
+                    "",
+                    "",
+                    "",
+                    ""
+                ]
+            },
+            {
+                "user": "narroyoc",
+                "dirección": "1234",
+                "tarjeta": "1234",
+                "productos": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "Vestido midi manga larga x 1",
+                    "",
+                    "",
+                    "",
+                    ""
+                ]
+            },
+            {
+                "user": "narroyoc",
+                "dirección": "1234",
+                "tarjeta": "1234",
+                "productos": [
+                    "",
+                    "",
+                    "",
+                    "",
+                    "Vestido midi manga larga x 1",
                     "",
                     "",
                     "",
