@@ -10,17 +10,18 @@ const colors = require('colors');
 
 const PUERTO = 9000;
 
-let welcome_message = "¡Hola!:) ¡Bienvenido al chat!";
-let new_user = "Un nuevo usuario se ha conectado en el chat";
-let hello_message = "¡Hola!";
+let welcome_message = ">> ¡Hola!:) ¡Bienvenido al chat!";
+let new_user = ">>Un nuevo usuario se ha conectado en el chat";
+let hello_message = "¡Hola, disfruta con tus amigos!";
 let date = new Date (Date.now());
 
-let commands = "Los comandos especiales son: " +
-                "/help: Mostrará una lista con todos los comandos soportados" + 
-                "/list: Devolverá el número de usuarios conectados" +
-                "/hello: El servidor nos devolverá el saludo" + 
-                "/date: Nos devolverá la fecha";
-
+let help_message = "Los comandos especiales son: <br> " +
+                "/help: Mostrará una lista con todos los comandos soportados <br>" + 
+                "/list: Devolverá el número de usuarios conectados <br>" +
+                "/hello: El servidor nos devolverá el saludo <br>" + 
+                "/date: Nos devolverá la fecha <br>";
+                
+//Variable uuarios conectados
 let user_count = 0;
 
 //Crear nueva aplicacion web
@@ -68,7 +69,7 @@ io.on('connect', (socket) => {
     if (msg.startsWith('/')){
         if (msg == '/help'){
             console.log("Muestra una lista con todos los comandos soportados");
-            msg = commands;
+            msg = help_message;
             socket.send(msg);
         }else if (msg == '/list'){
             console.log("Devuelve el número de usuarios conectados");
