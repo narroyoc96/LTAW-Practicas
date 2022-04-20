@@ -10,12 +10,6 @@ h2{
     font-family: 'Square Peg';
 }
 
-h3{
-    color: rgb(41, 9, 219); 
-    font-size: 40px;
-    font-family: 'Square Peg';
-}
-
 #msg_entry{
     border-color: rgb(243, 141, 238 );
     color: black;
@@ -39,13 +33,26 @@ h3{
     font-family: 'Square Peg';
 }
 
-#respuesta{
-    text-align: center;
-    margin-left: 120px ;
-    margin-right: 120px ;
-    padding-top: 20px;
-    padding-bottom: 10px;
-    font-size: 20px;
-    font-style: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
-    color: black
+
+#usuario{
+    background-color: transparent;
+    margin-left: 180px;
+    margin-right: 180px;
+    margin-bottom: 30px;
+    color: rgb(0, 6, 63); 
+    font-size: 30px;
+    font-family: 'Square Peg';
+    
 }
+
+#nick{
+    border-color: rgb(4, 248, 228);
+    color: black;
+    width: 20%;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 5px;
+    border-style: outset;
+    font-family: 'Courier New', Courier, monospace;
+}
+

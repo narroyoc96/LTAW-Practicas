@@ -14,13 +14,14 @@ let welcome_message = ">> ¡Hola!:) ¡Bienvenido al chat!";
 let new_user = ">>Un nuevo usuario se ha conectado en el chat";
 let hello_message = "¡Hola, disfruta con tus amigos!";
 let date = new Date (Date.now());
+let desconected = ">>Usuario desconectado"
 
 let help_message = "Los comandos especiales son: <br> " +
                 "/help: Mostrará una lista con todos los comandos soportados <br>" + 
                 "/list: Devolverá el número de usuarios conectados <br>" +
                 "/hello: El servidor nos devolverá el saludo <br>" + 
                 "/date: Nos devolverá la fecha <br>";
-                
+
 //Variable uuarios conectados
 let user_count = 0;
 
@@ -61,6 +62,7 @@ io.on('connect', (socket) => {
   socket.on('disconnect', function(){
     console.log('** CONEXIÓN TERMINADA **'.yellow);
     user_count -=1;
+    io.send(desconected);
  });  
 
   //Mensaje recibido: Hacer eco
