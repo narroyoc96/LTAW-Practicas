@@ -5,7 +5,9 @@ const msg_nick = document.getElementById("nick");
 
 //Variable nombre usuario
 let nickname = 'Anonimo';
- 
+
+let write =false;
+
 
 //-- Crear un websocket. Se establece la conexión con el servidor
 const socket = io();
@@ -19,10 +21,20 @@ socket.on("message", (msg)=>{
 msg_entry.onchange = () => {
   if (msg_entry.value)
     socket.send(nickname + ': ' + msg_entry.value);
+    write = false;
 
   //-- Borrar el mensaje actual
   msg_entry.value = "";
 }
+
+//Al estar escribiendo se les manda un mensaje a los usuarios
+msg_entry.oninput = () => {
+  //-- Si esta escribiendo
+  if(!write){
+    user_write = true;
+    socket.send('El usuario ' + nickname + ' esta escribiendo...');
+  };
+};
 console.log(nickname)
 
 //-- Al introducir el botón del nick se le asigna
