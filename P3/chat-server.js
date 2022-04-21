@@ -2,27 +2,28 @@
 //Noelia Arroyo Castaño
 //Asigantura: LTAW
 
-//-- Cargar las dependencias
+//Cargar dependencias
 const socket = require('socket.io');
 const http = require('http');
 const express = require('express');
 const colors = require('colors');
 
-const PUERTO = 9000;
+const PUERTO = 9090;
 
-let welcome_message = ">> ¡Hola!:) ¡Bienvenido al chat!";
-let new_user = ">>Un nuevo usuario se ha conectado en el chat";
-let hello_message = "¡Hola, disfruta con tus amigos!";
-let date = new Date (Date.now());
-let desconected = ">>Usuario desconectado"
+let welcome_message = "<< ¡Hola, bienvenido al chat!";
+let new_user = "<< Un nuevo usuario ha entrado en el chat";
+let hello_message = "<< ¡Hola, disfruta en el chat!";
+let date = new Date ();
+var options = { year: 'numeric', month: 'long', day: 'numeric' };
 
-let help_message = "Los comandos especiales son: <br> " +
+
+let commands = "Los comandos especiales son: <br>" +
                 "/help: Mostrará una lista con todos los comandos soportados <br>" + 
                 "/list: Devolverá el número de usuarios conectados <br>" +
                 "/hello: El servidor nos devolverá el saludo <br>" + 
                 "/date: Nos devolverá la fecha <br>";
 
-//Variable uuarios conectados
+//Variable usuarios
 let user_count = 0;
 
 //Crear nueva aplicacion web
@@ -37,7 +38,7 @@ const io = socket(server);
 //ENTRADA DE LA APLICACION WEB
 //Definimos punto de entrada principal de mi aplicación web
 app.get('/', (req, res) => {
-  res.send('¡Bienvenido al chat!' + '<p><a href="/chat.html">Unirse al chat</a></p>');
+  res.send('<h2>¡Bienvenido al chat!</h2>' + '<p><a href="/chat.html">Unirse al chat</a></p>');
 });
 
 //Necesario para que el servidor le envíe al cliente la biblioteca socket.io para el cliente
@@ -62,8 +63,8 @@ io.on('connect', (socket) => {
   socket.on('disconnect', function(){
     console.log('** CONEXIÓN TERMINADA **'.yellow);
     user_count -=1;
-    io.send(desconected);
- });  
+
+ });
 
   //Mensaje recibido: Hacer eco
   socket.on("message", (msg)=> {
@@ -71,7 +72,7 @@ io.on('connect', (socket) => {
     if (msg.startsWith('/')){
         if (msg == '/help'){
             console.log("Muestra una lista con todos los comandos soportados");
-            msg = help_message;
+            msg = commands;
             socket.send(msg);
         }else if (msg == '/list'){
             console.log("Devuelve el número de usuarios conectados");
@@ -83,7 +84,7 @@ io.on('connect', (socket) => {
             socket.send(msg);
         } else if(msg == '/date'){
             console.log("Devuelve la fecha");
-            msg = ("La fecha actual es: " + date);
+            msg = ("La fecha actual es: " + date.toLocaleDateString("es-ES", options));
             socket.send(msg);
         }else{
             console.log("Comando no reconocido");
@@ -92,6 +93,7 @@ io.on('connect', (socket) => {
         }
 
     }else{
+        //Hacer eco
         io.send(msg);
     }
   });

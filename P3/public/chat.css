@@ -10,6 +10,12 @@ h2{
     font-family: 'Square Peg';
 }
 
+h3{
+    color: rgb(41, 9, 219); 
+    font-size: 50px;
+    font-family: 'Square Peg';
+}
+
 #msg_entry{
     border-color: rgb(243, 141, 238 );
     color: black;
@@ -56,3 +62,8 @@ h2{
     font-family: 'Courier New', Courier, monospace;
 }
 
+#principal{
+    color: rgb(41, 9, 219); 
+    font-size: 50px;
+    font-family: 'Square Peg';
+}
