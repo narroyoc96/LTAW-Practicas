@@ -76,7 +76,7 @@ io.on('connect', (socket) => {
             socket.send(msg);
         }else if (msg == '/list'){
             console.log("Devuelve el número de usuarios conectados");
-            msg = ("El número de usuarios conectados es: " + user_count);
+            msg = ("Hay " + user_count + " usuarios conectados en este chat");
             socket.send(msg);
         }else if (msg == '/hello'){
             console.log("El servidor devuelve el saludo");
@@ -88,7 +88,7 @@ io.on('connect', (socket) => {
             socket.send(msg);
         }else{
             console.log("Comando no reconocido");
-            msg = ("Comando no reconocido");
+            msg = ("Comando no reconocido, escribe /help para que te muestre los comandos permitidos en este chat");
             socket.send(msg);
         }
 
