@@ -2,50 +2,50 @@
     {
         "productos": [
             {
-                "nombre": "Camiseta gráfico texto",
+                "nombre": "camiseta1",
                 "descripcion": "Camiseta de cuello redondo y manga corta",
                 "stock": 20,
                 "precio": "7.99€"
                         
             },
             {
-                "nombre": "Camiseta mujeres ilustradas",
+                "nombre": "camiseta2",
                 "descripcion": "Camiseta de cuello redondo y manga corta",
                 "stock": 20,
                 "precio": "12.99€"
             },
             {
-                "nombre": "Pantalón wide leg",
+                "nombre": "pantalon1",
                 "descripcion": "Pantalón de tiro alto con bolsillos delanteros",
                 "stock": 20,
                 "precio": "19.99€"
             },
             {
-                "nombre": "Pantalón culotte vestir",
+                "nombre": "pantalon2",
                 "descripcion": "Pantalón de tiro alto con pernera recta",
                 "stock": 20,
                 "precio": "29.99€"
             },
             {
-                "nombre": "Vestido midi manga larga",
+                "nombre": "vestido1",
                 "descripcion": "Vestido midi ajustado de cuello redondo y manga corta",
                 "stock": 20,
                 "precio": "19.99€"
             },
             {
-                "nombre": "America vestido",
+                "nombre": "vestido2",
                 "descripcion": "Americana con solapa, con manga larga y hombros marcados",
                 "stock": 20,
                 "precio": "35.99€"
             },
             {
-                "nombre": "Bandolera piel fleco",
+                "nombre": "bolso1",
                 "descripcion": "Medidas(cm): 28x29x9",
                 "stock": 20,
                 "precio": "39.99€"
             },
             {
-                "nombre": "Bandolera cierra",
+                "nombre": "bolso2",
                 "descripcion": "Medidas(cm): 22x13x7",
                 "stock": 20,
                 "precio": "12.99€"
