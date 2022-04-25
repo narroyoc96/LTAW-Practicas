@@ -13,6 +13,7 @@ const PUERTO = 9090;
 let welcome_message = ">> ¡Hola, bienvenido al chat!";
 let new_user = ">> Un nuevo usuario ha entrado en el chat";
 let hello_message = ">> ¡Hola, disfruta en el chat!";
+let desconected = '>> Un usuario abandonó el chat';
 let date = new Date ();
 var options = { year: 'numeric', month: 'long', day: 'numeric' };
 
@@ -47,12 +48,35 @@ app.use('/', express.static(__dirname +'/'));
 //Este directorio publico contiene ficheros estáticos
 app.use(express.static('public'));
 
+//funcion para los comandos especiales
+function especial_commands(msg){
+  let data;
+  if(msg == '/help'){
+    console.log('Muestra una lista con todos los comandos soportados');
+    data = commands;
+  }else if(msg == '/list'){
+    console.log('Devuelve el número de usuarios conectados');
+    data = ">> Hay " + user_count + " usuarios conectados en este chat";
+  }else if(msg == '/hello'){
+    console.log('El servidor devuelve el saludo');
+    data = hello_message;
+  }else if(msg == '/date'){
+    console.log('Devuelve la fecha');
+    data = ">> La fecha actual es: " + date.toLocaleDateString("es-ES", options);
+  }else{
+    console.log('Comando no reconocido');
+    data = (">> Comando no reconocido, escribe /help para que te muestre los comandos permitidos en este chat");
+  };
+  return(data);
+};
+
 //GESTION SOCKETS IO
 //Evento: Nueva conexion recibida
 io.on('connect', (socket) => {
 
   console.log('** NUEVA CONEXIÓN **'.yellow);
   user_count = user_count + 1;
+
   //Enviamos mensaje bienvenida
   socket.send(welcome_message);
 
@@ -63,37 +87,21 @@ io.on('connect', (socket) => {
   socket.on('disconnect', function(){
     console.log('** CONEXIÓN TERMINADA **'.yellow);
     user_count -=1;
-
+    io.send(desconected);
  });
 
   //Mensaje recibido: Hacer eco
   socket.on("message", (msg)=> {
+
     console.log("Mensaje Recibido!: " + msg.blue);
-    if (msg.startsWith('/')){
-        if (msg == '/help'){
-            console.log("Muestra una lista con todos los comandos soportados");
-            msg = commands;
-            socket.send(msg);
-        }else if (msg == '/list'){
-            console.log("Devuelve el número de usuarios conectados");
-            msg = (">> Hay " + user_count + " usuarios conectados en este chat");
-            socket.send(msg);
-        }else if (msg == '/hello'){
-            console.log("El servidor devuelve el saludo");
-            msg = hello_message;
-            socket.send(msg);
-        } else if(msg == '/date'){
-            console.log("Devuelve la fecha");
-            msg = (">> La fecha actual es: " + date.toLocaleDateString("es-ES", options));
-            socket.send(msg);
-        }else{
-            console.log("Comando no reconocido");
-            msg = (">> Comando no reconocido, escribe /help para que te muestre los comandos permitidos en este chat");
-            socket.send(msg);
-        }
+    msg_text = msg.split(' ')[1];
+    if(msg_text.startsWith('/')){
+      console.log("Recurso recibido!: " + msg_text.red);
+      data = especial_commands(msg_text);
+      socket.send(data);
     }else{
-        //Hacer eco
-        io.send(msg);
+      //Reenviar a todos los clientes conectados
+      io.send(msg);
     }
   });
 });

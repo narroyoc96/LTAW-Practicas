@@ -11,14 +11,16 @@ let user = 'Anónimo';
 
 //variable para mostrar si el usuario esta escribiendo
 let write = false;
+
 //-- Crear un websocket. Se establece la conexión con el servidor
 const socket = io();
 
 
 socket.on("message", (msg)=>{
   display.innerHTML += '<p>' + msg + '</p>';
-  audio.play();
-
+  if(!msg.includes('está escribiendo..')){
+    audio.play(); //sonará cuando se envie el mensaje
+  }
 });
 
 //Al apretar el botón se envía un mensaje al servidor
@@ -35,7 +37,7 @@ msg_entry.onchange = () => {
 msg_entry.oninput = () => {
   if(!write){
     write = true;
-    socket.send('Usuario ' + user + ' está escribiendo..');
+    socket.send(user + ' está escribiendo..');
   };
 };
 
