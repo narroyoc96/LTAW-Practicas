@@ -9,7 +9,7 @@ h2{
     -webkit-background-clip: text;
     color: transparent;
     text-align: center;
-    font-size: 70px;
+    font-size: 50px;
     font-style: normal;
     font-family: 'Square Peg';
     margin-top: 25px;
@@ -23,6 +23,7 @@ h2{
     font-size: 15px;
     font-family: 'Courier New', Courier, monospace;
     margin-bottom: 20px;
+    margin-top: 30px;
     background-color: rgb(129, 129, 129);
 }
 
@@ -39,9 +40,10 @@ h2{
 #usuario{
     font-family: 'Square Peg';
     color: rgb(5, 81, 167);
-    font-size: 35px;
+    font-size: 30px;
     font-weight: bold;
 }
+
 #display{
     border-style: outset;
     border-width: 8px;
@@ -64,9 +66,6 @@ h2{
     font-weight: bold;
 }
 
-.em em-pig_nose{
-    font-size: 20px;
-}
 /*CREAR BOTONES REDES SOCIALES*/
 *{
     margin: 0;
