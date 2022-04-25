@@ -8,7 +8,7 @@ const http = require('http');
 const express = require('express');
 const colors = require('colors');
 
-const PUERTO = 2424;
+const PUERTO = 9090;
 
 let welcome_message = ">> ¡Hola, bienvenido al chat!";
 let new_user = ">> Un nuevo usuario ha entrado en el chat";
