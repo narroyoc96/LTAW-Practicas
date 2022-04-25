@@ -91,7 +91,6 @@ io.on('connect', (socket) => {
             msg = (">> Comando no reconocido, escribe /help para que te muestre los comandos permitidos en este chat");
             socket.send(msg);
         }
-
     }else{
         //Hacer eco
         io.send(msg);
@@ -101,4 +100,4 @@ io.on('connect', (socket) => {
 
 //Lanzamos servidor HTTP
 server.listen(PUERTO);
-console.log("Escuchando en puerto: " + PUERTO); 
+console.log("Escuchando en puerto: " + PUERTO);
