@@ -640,35 +640,35 @@ const server = http.createServer((req, res) => {
       break;
     
   case 'buscar':
-    if (busqueda == 'camiseta1') {
+    if (busqueda == 'Camiseta gráfico texto') {
       n = 0;
       content = ARTICULO1;
       content = get_producto(n, content);
-    }else if(busqueda == 'camiseta2'){
+    }else if(busqueda == 'Camiseta mujeres ilustradas'){
       n = 1;
       content = ARTICULO2;
       content = get_producto(n, content);
-    }else if(busqueda == 'pantalon1'){
+    }else if(busqueda == 'Pantalón wide leg'){
       n = 2;
       content = ARTICULO3;
       content = get_producto(n, content);
-    }else if(busqueda == 'pantalon2'){
+    }else if(busqueda == 'Pantalón culotte vestir'){
       n = 3;
       content = ARTICULO4;
       content = get_producto(n, content);
-    }else if(busqueda == 'vestido1'){
+    }else if(busqueda == 'Vestido midi manga larga'){
       n = 4;
       content = ARTICULO5;
       content = get_producto(n, content);
-    }else if(busqueda == 'vestido2'){
+    }else if(busqueda == 'America vestido'){
       n = 5;
       content = ARTICULO6;
       content = get_producto(n, content);
-    }else if(busqueda == 'bolso1'){
+    }else if(busqueda == 'Bandolera piel fleco'){
       n = 6;
       content = ARTICULO7;
       content = get_producto(n, content);
-    }else if(busqueda == 'bolso2'){
+    }else if(busqueda == 'Bandolera cierra'){
       n = 7;
       content = ARTICULO8;
       content = get_producto(n, content);
