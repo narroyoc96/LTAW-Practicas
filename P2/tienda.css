@@ -87,8 +87,8 @@ button{
 }
 
 button:hover{
-    background-color: rgb(204, 79, 175);
-    color: whitesmoke;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 165, 14);
 }
 
 h3{
@@ -101,6 +101,35 @@ h3{
     margin-top: 25px;
 }
 
+#camiseta{
+    margin-right: 20px;
+    border-color: rgb(16, 199, 86);
+    border-radius: 21px;
+    border-style: solid;
+}
+    
+
+#pantalon{
+    margin-right: 20px;
+    border-color: rgb(16, 199, 86);
+    border-radius: 21px;
+    border-style: solid;
+}
+
+#vestido{
+    margin-right: 20px;
+    border-color: rgb(16, 199, 86);
+    border-radius: 21px;
+    border-style: solid;
+    
+}
+
+#bolso{
+    margin-right: 20px;
+    border-color: rgb(16, 199, 86);
+    border-radius: 21px;
+    border-style: solid;
+}
 /*CREAR BOTONES REDES SOCIALES*/
 *{
     margin: 0;

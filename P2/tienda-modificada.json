@@ -16,7 +16,7 @@
             {
                 "nombre": "Pantalón wide leg",
                 "descripcion": "Pantalón de tiro alto con bolsillos delanteros",
-                "stock": 20,
+                "stock": 19,
                 "precio": "19.99€"
             },
             {
@@ -28,13 +28,13 @@
             {
                 "nombre": "Vestido midi manga larga",
                 "descripcion": "Vestido midi ajustado de cuello redondo y manga corta",
-                "stock": 15,
+                "stock": 20,
                 "precio": "19.99€"
             },
             {
                 "nombre": "America vestido",
                 "descripcion": "Americana con solapa, con manga larga y hombros marcados",
-                "stock": 20,
+                "stock": 19,
                 "precio": "35.99€"
             },
             {
@@ -94,74 +94,10 @@
                 "productos": [
                     "",
                     "",
+                    "Pantalón wide leg x 1",
                     "",
                     "",
-                    "Vestido midi manga larga x 1",
-                    "",
-                    "",
-                    "",
-                    ""
-                ]
-            },
-            {
-                "user": "narroyoc",
-                "dirección": "1234",
-                "tarjeta": "1234",
-                "productos": [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "Vestido midi manga larga x 1",
-                    "",
-                    "",
-                    "",
-                    ""
-                ]
-            },
-            {
-                "user": "narroyoc",
-                "dirección": "1234",
-                "tarjeta": "1234",
-                "productos": [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "Vestido midi manga larga x 1",
-                    "",
-                    "",
-                    "",
-                    ""
-                ]
-            },
-            {
-                "user": "narroyoc",
-                "dirección": "1234",
-                "tarjeta": "1234",
-                "productos": [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "Vestido midi manga larga x 1",
-                    "",
-                    "",
-                    "",
-                    ""
-                ]
-            },
-            {
-                "user": "narroyoc",
-                "dirección": "1234",
-                "tarjeta": "1234",
-                "productos": [
-                    "",
-                    "",
-                    "",
-                    "",
-                    "Vestido midi manga larga x 1",
-                    "",
+                    "America vestido x 1",
                     "",
                     "",
                     ""

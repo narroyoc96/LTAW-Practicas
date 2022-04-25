@@ -91,8 +91,8 @@ button{
 }
 
 button:hover{
-    background-color: rgb(204, 79, 175);
-    color: whitesmoke;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 165, 14);
 }
 
 /*CREAR BOTONES REDES SOCIALES*/

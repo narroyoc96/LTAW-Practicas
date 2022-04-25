@@ -39,9 +39,9 @@ body{
     font-style: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.btn:hover{
-    background-color: rgb(204, 79, 175);
-    color: whitesmoke;
+button:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 165, 14);
 }
 
 h2{
