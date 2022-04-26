@@ -15,6 +15,10 @@ h2{
     margin-top: 25px;
 }
 
+#titulo{
+    margin-top: 80px;
+}
+
 #msg_user{
     border-color: rgb(12, 89, 255);
     color: black;
