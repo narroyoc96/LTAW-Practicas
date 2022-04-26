@@ -39,7 +39,9 @@ const io = socket(server);
 //ENTRADA DE LA APLICACION WEB
 //Definimos punto de entrada principal de mi aplicación web
 app.get('/', (req, res) => {
-  res.send('<h2>¡Bienvenido al chat!</h2>' + '<p><a href="/chat.html">Unirse al chat</a></p>');
+  path = __dirname + '/public/principal.html';
+  res.sendFile(path);
+  console.log("Solicitado acceso al chat");
 });
 
 //Necesario para que el servidor le envíe al cliente la biblioteca socket.io para el cliente
