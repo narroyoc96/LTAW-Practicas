@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="chat.css">
+  <link href="https://fonts.googleapis.com/css2?family=Square+Peg&display=swap" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+  integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+  <link rel="icon" href="chat.ico">
+  <title>Chat</title>
+
+  <!-- Cargar la biblioteca Socket.IO. Nos la debe entregar el servidor -->
+  <script src="/socket.io/socket.io.js"></script>
+
+  <!-- Cliente que usa los Sockets.io-->
+  <script src="chat-client.js" defer></script>
+</head>
+
+<body>
+    <h2>CHAT: Oña <i class="em em-pig"></i></h2></i>
+    
+
+    <div id="usuario">
+        Introduce nombre de usuario:
+        <input type="text" id="msg_user">
+    </div>
+    <div>
+        <input type="text" placeholder="Comienza a chatear.. " autocomplete="off" id="msg_entry">
+        <p id="display"></p>
+    </div>
+  
+    <div class="redes-container">
+        <p id="red">Mis redes sociales: </p>
+        <ul>
+            <li><a href="https://www.instagram.com/noeliaac96/?hl=es" target="_blanck" class="instagram"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.facebook.com/noelia.arroyocastano" target="_blanck" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://twitter.com/noeliaac96" target="_blanck" class="twitter"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/noelia-arroyo-casta%C3%B1o-7ab358165/" target="_blanck"  class="linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+            <li><a href="https://github.com/narroyoc96" target="_blanck"class="github"><i class="fab fa-github"></i></a></li>
+        </ul>
+    </div>
+</body>
+</html>
