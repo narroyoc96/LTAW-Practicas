@@ -8,8 +8,8 @@ const http = require('http');
 const express = require('express');
 const colors = require('colors');
 const electron = require('electron');
-const ip = requiere('ip');
-const process = requiere('process');
+const ip = require('ip');
+const process = require('process');
 
 const PUERTO = 9090;
 
@@ -171,7 +171,7 @@ electron.app.on('ready', () => {
   dir_ip = ip.address();
 
   //Reagrupamos datos a enviar
-  let datos = [v_node, v_chrome, v_electron, arch, platform, direct,
+  let datos = [node_version, chrome_version, electron_version, arquitectura, plataforma, directorio,
               dir_ip, PUERTO, fichero];
 
   //Esperar a que la página se cargue  con el evento 'ready-to-show'
