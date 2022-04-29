@@ -7,6 +7,10 @@ const socket = require('socket.io');
 const http = require('http');
 const express = require('express');
 const colors = require('colors');
+const electron = require('electron');
+const ip = require('ip');
+const process = require('process');
+
 
 const PUERTO = 9090;
 
@@ -112,60 +116,55 @@ io.on('connect', (socket) => {
 server.listen(PUERTO);
 console.log("Escuchando en puerto: " + PUERTO);
 
-//-- Cargar el módulo de electron
-const electron = require('electron');
-
-console.log("Arrancando electron...");
-
-//-- Variable para acceder a la ventana principal
-//-- Se pone aquí para que sea global al módulo principal
-let win = null;
-
 //-- Punto de entrada. En cuanto electron está listo,
 //-- ejecuta esta función
 electron.app.on('ready', () => {
-    console.log("Evento Ready!");
+  console.log("Evento Ready!");
 
-    //-- Crear la ventana principal de nuestra aplicación
-    win = new electron.BrowserWindow({
-        width: 600,   //-- Anchura 
-        height: 600,  //-- Altura
+  //-- Crear la ventana principal de nuestra aplicación
+  win = new electron.BrowserWindow({
+      width: 600,   //-- Anchura 
+      height: 600,  //-- Altura
 
-        //-- Permitir que la ventana tenga ACCESO AL SISTEMA
-        webPreferences: {
-          nodeIntegration: true,
-          contextIsolation: false
-        }
-    });
+      //-- Permitir que la ventana tenga ACCESO AL SISTEMA
+      webPreferences: {
+        nodeIntegration: true,
+        contextIsolation: false
+      }
+  });
 
   //-- En la parte superior se nos ha creado el menu
   //-- por defecto
   //-- Si lo queremos quitar, hay que añadir esta línea
   //win.setMenuBarVisibility(false)
-
-  //-- Cargar contenido web en la ventana
-  //-- La ventana es en realidad.... ¡un navegador!
-  //win.loadURL('https://www.urjc.es/etsit');
-
+  
   //-- Cargar interfaz gráfica en HTML
-  win.loadFile("index.html");
+  let index = "index.html"
+  win.loadFile(index);
+
+  //-- Obtener elementos de la interfaz
+  version_node = process.versions.node;
+  version_electron = process.versions.electron;
+  version_chrome = process.versions.chrome;
+  arquitectura = process.arch;
+  plataforma = process.platform;
+  directorio = process.cwd();
+  ip_address = ip.address();
+  chat = "chat.html";
+
+  let information = [version_node, version_electron, version_chrome, arquitectura, plataforma, directorio, ip_address, PUERTO, chat];
 
   //-- Esperar a que la página se cargue y se muestre
   //-- y luego enviar el mensaje al proceso de renderizado para que 
   //-- lo saque por la interfaz gráfica
   win.on('ready-to-show', () => {
-    win.webContents.send('print', "MENSAJE ENVIADO DESDE PROCESO MAIN");
+    win.webContents.send('information', information);
   });
-
-  //-- Enviar un mensaje al proceso de renderizado para que lo saque
-  //-- por la interfaz gráfica
-  win.webContents.send('print', "MENSAJE ENVIADO DESDE PROCESO MAIN");
-
 });
-
 
 //-- Esperar a recibir los mensajes de botón apretado (Test) del proceso de 
 //-- renderizado. Al recibirlos se escribe una cadena en la consola
 electron.ipcMain.handle('test', (event, msg) => {
-  console.log("-> Mensaje: " + msg);
+console.log("-> Mensaje: " + msg);
+io.send(msg);
 });
