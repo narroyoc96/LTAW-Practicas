@@ -1,0 +1,103 @@
+body{
+    background-image: url(public/imagen/fondo.jpg);
+    text-align: center;
+}
+
+h2{
+    background: linear-gradient(rgb(4, 30, 116),rgb(27, 89, 223), rgb(84, 124, 253));
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
+    font-size: 50px;
+    font-style: normal;
+    font-family: 'Square Peg';
+    margin-top: 25px;
+}
+
+#btn_test{
+    cursor: pointer;
+    text-align: center;
+    margin: 5px; /*margen entre botones*/
+    padding: 0;
+    font-weight: bold;
+    font-size: 1em; /*tamaño letra dentro de botones*/
+    border: none;
+    border-color: transparent;
+    border-style: outset;
+    border-radius: 8px;
+    background-color: rgb(88, 205, 218);
+    color: rgb(4, 30, 116);
+    font-size: 20px;
+    font-style: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 50px;
+}
+
+#btn_test:hover{
+    background-color: rgb(4, 30, 116);
+    color: rgb(88, 205, 218);
+}
+
+.blue {
+    text-align: left;
+    font-size: 15px;
+    color: rgb(88, 205, 218);
+    font-family: 'Square Peg';
+}
+
+#data{
+    text-align: left;
+    font-family: 'Square Peg';
+    font-size: 15spx;
+    color: rgb(4, 30, 116);
+}
+
+#ip, #users{
+    color: rgb(88, 205, 218);
+    text-align: center;
+    font-family: 'Square Peg';
+}
+
+p{
+    font-family: 'Square Peg';
+    color: rgb(4, 30, 116);
+    font-size: 15px;
+}
+
+#display{
+    border-color: rgb(243, 141, 238);
+    border-style: outset;
+    border-width: 10px;
+    text-align: center;
+    height: 500px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 15px;
+    color:rgb(4, 30, 116);
+    overflow: scroll;
+    font-family: 'Square Peg'
+
+}
+
+#info{
+    font-family: 'Square Peg';
+    color: rgb(243, 141, 238);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#left{
+    text-align: center;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    margin-left: 2%;
+    width: 30%;
+    position: relative;
+    float: left;
+    height: auto;
+}
+  
+#right{
+    float:right;
+    width: 50%;
+    margin-bottom: 15px;
+}
