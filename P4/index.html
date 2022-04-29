@@ -15,25 +15,33 @@
     <!-- Cargar el proceso asociado a esta página -->
     <script src="index.js" defer></script>
 
-    <title>Mi APP (version 10)</title>
+    <title>Chat-Electron</title>
 </head>
 <body>
-    <h1>INTERFAZ GRÁFICA</h1>
-    <img src="logo-urjc.png" alt="Logo-URJC" width=150px>
+    <h1>CHAT</h1>
+  
+    <div id="left">
+      <hr>
+      <h2>Información</h2>
+      <ul class="caja">
+          <li>Versión de Node: <span id="info1" class="blue"></span> </li>
+          <li>Versión de Electron: <span id="info2" class="blue"></span> </li>
+          <li>Versión de Chrome: <span id="info3" class="blue"></span> </li>
+          <li>Arquitectura: <span id="info4" class="blue"></span> </li>
+          <li>Plataforma: <span id="info5" class="blue"></span></li>
+          <li>Directorio: <span id="info6" class="blue"></span></li>
+      </ul>
+      <h2>Usuarios conectados</h2>
+      <p class="caja"></p>
+      <h2>Direccion IP</h2>
+      <p class="caja"></p>
+      <hr>
+    </div>
+  
+    <div id="right">
+      <p><input type="button" value="Mensaje prueba" id="test"></p>
+      <p id="display"></p>
+    </div>
 
-    <hr>
-    <h2>Información:</h2>
-    <ul>
-        <li>Arquitectura: <span id="info1" class="blue"></span> </li>
-        <li>Plataforma: <span id="info2" class="blue"></span></li>
-        <li>Diretorio: <span id="info3" class="blue"></span></li>
-    </ul>
-
-    <hr>
-    <p>Mensajes enviados desde el proceso main:</p>
-    <p>Print:  <span id='print' class="red"></span> </p>
-    <p>   <input type="button" value="Test" id="btn_test"> </p>
-   <p>Display:</p>
-    <p id="display"></p>
-</body>
+  </body>
 </html>

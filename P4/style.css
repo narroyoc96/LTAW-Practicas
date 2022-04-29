@@ -1,20 +1,61 @@
-h1 {
-    width: 93%;
-    padding: 20px;
-    background-color: lightgreen;
-    border-radius: 10px;
-    text-align: center;
-  }
-
-.blue {
-    color: blue;
+body{
+  background-image: url(public/imagen/fondo.jpg);
+  text-align: center;
 }
 
-.red {
-  color: red;
+h1{
+  font-size: 30px;
 }
 
-#display {
-    border: 2px solid lightblue;
-    padding: 10px;
+h2{ 
+  font-size: 30px;
+}
+
+#test{
+  padding: 8px;
+  font-weight: 400;
+  font-size: 20px;
+  color: rgb(243, 141, 238);
+}
+
+#display{
+  border-style: outset;
+  border-width: 8px;
+  border-color: rgb(243, 141, 238);
+  text-align: center;
+  height: 600px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 35px;
+  color:black;
+  overflow: scroll;
+  font-family: 'Square Peg';
+}
+
+.caja {
+  text-align: left;
+  font-size: 20px;
+  color: rgb(243, 141, 238);
+  border-style: outset;
+  border-width: 15px;
+  border-color: rgb(243, 141, 238);
+  padding: 25px;
+  text-align: left;
+}
+
+#left{
+  text-align: center;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  margin-left: 2%;
+  width: 30%;
+  position: relative;
+  float: left;
+  height: auto;
+}
+
+#right{
+  float:right;
+  width: 50%;
+  margin-bottom: 15px;
 }
