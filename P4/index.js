@@ -1,5 +1,6 @@
 //PROCESO RENDERIZADO
 const electron = require('electron');
+const qrcode = require('qrcode');
 
 console.log("Hola desde el proceso de la web...");
 
@@ -14,7 +15,7 @@ const num_usuarios = document.getElementById("users");
 const dir_ip = document.getElementById("ip");
 const boton = document.getElementById("btn_test");
 const mensajes = document.getElementById("display");
-
+const code = document.getElementById("qrcode");
 
 //Mensajes recibidos del proceso MAIN
 
@@ -31,6 +32,11 @@ electron.ipcRenderer.on('informacion', (event, message) => {
     directorio.textContent = message[5]
     url = ("http://" + message[6] + ":" + message[7] + "/" + message[8]);
     dir_ip.textContent = url;
+
+    //Generamos codigo qr de la url
+    qrcode.toDataURL(url, function(err, url){
+        code.src = url;
+    });
 });
 
 //-- Numero de usuarios
